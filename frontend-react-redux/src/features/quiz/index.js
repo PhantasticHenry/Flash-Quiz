@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Answers from "../../components/answers";
 import Question from "../../components/question";
 
 function Quiz() {
@@ -19,10 +20,14 @@ function Quiz() {
 
   const [current, setCurrent] = useState(0);
   let question = SAMPLE_QUESTIONS[current].question;
+  let correct_answer = SAMPLE_QUESTIONS[current].correct_answer;
+  let incorrect_answers = SAMPLE_QUESTIONS[current].incorrect_answers;
+  let answers = [...incorrect_answers, correct_answer];
 
   return (
     <div>
       <Question question={question} />
+      <Answers answers={answers} />
     </div>
   );
 }
