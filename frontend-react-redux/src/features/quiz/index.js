@@ -32,26 +32,27 @@ function Quiz() {
     setCurrent(current + 1);
   };
 
-  const isCorrect = () => {
-    setCorrect(correct + 1);
-  };
-
-  const isNotCorrect = () => {
-    setIncorrect(incorrect + 1);
+  const checkAnswer = (answer) => {
+    if (answer === correct_answer) {
+      setCorrect(correct + 1);
+    } else {
+      setIncorrect(incorrect + 1);
+    }
   };
 
   const handleClick = (e) => {
-    if (e.currentTarget.value.toString() === correct_answer) {
-      isCorrect();
+    checkAnswer(e.currentTarget.value.toString());
+    if (current + 1 <= SAMPLE_QUESTIONS.length) {
+      nextQuestion();
     } else {
-      isNotCorrect();
+      setCurrent(0);
     }
-    nextQuestion();
 
     console.log("Correct", correct);
     console.log("Incorrect", incorrect);
   };
-
+  //selecting last item in array to compare current to reset if end of array
+  console.log("last", SAMPLE_QUESTIONS.pop());
   return (
     <div>
       <Question question={question} />
