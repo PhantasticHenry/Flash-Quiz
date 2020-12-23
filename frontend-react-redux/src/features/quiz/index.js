@@ -1,4 +1,5 @@
 import React from "react";
+import Question from "../../components/question";
 
 function Quiz() {
   const SAMPLE_QUESTIONS = [
@@ -16,7 +17,11 @@ function Quiz() {
     },
   ];
 
-  return <div>Quiz Component!!!</div>;
+  return (
+    <div>
+      <Question question={"this is my question"} />
+    </div>
+  );
 }
 
 export default Quiz;
