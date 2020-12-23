@@ -1,7 +1,9 @@
 import React from "react";
 
 function Answers({ answers }) {
-  return <div>{answers}</div>;
+  const options = answers.map((answer, i) => <li key={i}>{answer}</li>);
+
+  return <div>{options}</div>;
 }
 
 export default Answers;
