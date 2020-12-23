@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Question from "../../components/question";
 
 function Quiz() {
@@ -17,9 +17,12 @@ function Quiz() {
     },
   ];
 
+  const [current, setCurrent] = useState(0);
+  let question = SAMPLE_QUESTIONS[current].question;
+
   return (
     <div>
-      <Question question={"this is my question"} />
+      <Question question={question} />
     </div>
   );
 }
