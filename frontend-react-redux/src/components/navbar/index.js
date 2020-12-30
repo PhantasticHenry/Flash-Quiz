@@ -18,9 +18,9 @@ function Navbar() {
       </NavLink>
       <div className="menu-icon">
         {clicked ? (
-          <FaBars onClick={() => setClicked(!clicked)} />
-        ) : (
           <FaTimes onClick={() => setClicked(!clicked)} />
+        ) : (
+          <FaBars onClick={() => setClicked(!clicked)} />
         )}
       </div>
       <ul className={clicked ? "nav-menu active" : "nav-menu"}>
