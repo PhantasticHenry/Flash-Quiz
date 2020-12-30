@@ -1,0 +1,10 @@
+.quiz-container {
+  display: flex;
+  background-image: url("../../images/quiz-time.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
