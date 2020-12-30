@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Quiz.css";
 import Answers from "../../components/answers";
 import Correct from "../../components/correct";
 import Question from "../../components/question";
@@ -80,7 +81,7 @@ function Quiz() {
   console.log(SAMPLE_QUESTIONS.pop());
 
   return (
-    <div>
+    <div className="quiz-container">
       {gameFinished ? (
         <>
           <Result correct={correct} incorrect={incorrect} />
