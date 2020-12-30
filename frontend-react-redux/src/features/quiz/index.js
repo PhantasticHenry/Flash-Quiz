@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Answers from "../../components/answers";
 import Correct from "../../components/correct";
 import Question from "../../components/question";
+import Result from "../../components/result";
 
 function Quiz() {
   const SAMPLE_QUESTIONS = [
@@ -17,19 +18,44 @@ function Quiz() {
       correct_answer: "14",
       incorrect_answers: ["11", "12", "13"],
     },
+    {
+      id: 3,
+      question: "7 + 3",
+      correct_answer: "10",
+      incorrect_answers: ["11", "12", "13"],
+    },
+    {
+      id: 4,
+      question: "7 + 4",
+      correct_answer: "11",
+      incorrect_answers: ["15", "12", "13"],
+    },
+    {
+      id: 5,
+      question: "6 + 7",
+      correct_answer: "13",
+      incorrect_answers: ["11", "12", "23"],
+    },
+    {
+      id: 6,
+      question: "1 + 7",
+      correct_answer: "8",
+      incorrect_answers: ["121", "9", "23"],
+    },
   ];
 
-  const [current, setCurrent] = useState(0);
+  const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
+  const [gameFinished, setGameFinished] = useState(false);
 
-  let question = SAMPLE_QUESTIONS[current].question;
-  let correct_answer = SAMPLE_QUESTIONS[current].correct_answer;
-  let incorrect_answers = SAMPLE_QUESTIONS[current].incorrect_answers;
+  let question = SAMPLE_QUESTIONS[index].question;
+  let correct_answer = SAMPLE_QUESTIONS[index].correct_answer;
+  let incorrect_answers = SAMPLE_QUESTIONS[index].incorrect_answers;
   let answers = [...incorrect_answers, correct_answer];
 
   const nextQuestion = () => {
-    setCurrent(current + 1);
+    setIndex(index + 1);
   };
 
   const checkAnswer = (answer) => {
@@ -41,23 +67,30 @@ function Quiz() {
   };
 
   const handleClick = (e) => {
-    checkAnswer(e.currentTarget.value.toString());
-    if (current + 1 <= SAMPLE_QUESTIONS.length) {
-      nextQuestion();
+    if (index >= SAMPLE_QUESTIONS.length) {
+      setGameFinished(true);
     } else {
-      setCurrent(0);
+      checkAnswer(e.currentTarget.value.toString());
+      nextQuestion();
     }
-
-    console.log("Correct", correct);
-    console.log("Incorrect", incorrect);
   };
-  //selecting last item in array to compare current to reset if end of array
-  console.log("last", SAMPLE_QUESTIONS.pop());
+
+  // console.log("Current", index);
+  // console.log("***", SAMPLE_QUESTIONS.length);
+  console.log(SAMPLE_QUESTIONS.pop());
+
   return (
     <div>
-      <Question question={question} />
-      <Answers answers={answers} handleClick={handleClick} />
-      <Correct correct={correct} />
+      {gameFinished ? (
+        <>
+          <Result correct={correct} incorrect={incorrect} />
+        </>
+      ) : (
+        <>
+          <Question question={question} />
+          <Answers answers={answers} handleClick={handleClick} />
+        </>
+      )}
     </div>
   );
 }
