@@ -52,6 +52,7 @@ function Navbar() {
         <li className="nav-item">
           <NavLink
             className="nav-link"
+            activeClassName="selected"
             onClick={() => setClicked(false)}
             to="/start-quiz"
           >
@@ -59,7 +60,11 @@ function Navbar() {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/high-score">
+          <NavLink
+            className="nav-link"
+            to="/high-score"
+            activeClassName="selected"
+          >
             High Score
           </NavLink>
         </li>

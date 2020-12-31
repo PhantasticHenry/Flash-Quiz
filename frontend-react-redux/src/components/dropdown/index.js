@@ -8,15 +8,13 @@ function Dropdown() {
 
   return (
     <>
-      <ul
-        // onClick={setClicked(!clicked)}
-        className={clicked ? "dropdown-menu clicked" : "dropdown-menu"}
-      >
+      <ul className={clicked ? "dropdown-menu clicked" : "dropdown-menu"}>
         {DropdownItems.map((item, index) => {
           return (
             <li key={index}>
               <NavLink
                 className={item.cName}
+                activeClassName="selected"
                 to={item.path}
                 onClick={() => setClicked(!clicked)}
               >
