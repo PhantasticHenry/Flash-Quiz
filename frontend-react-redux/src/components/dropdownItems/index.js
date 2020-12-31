@@ -1,17 +1,17 @@
 export const DropdownItems = [
   {
-    title: "Add Question",
-    path: "/add-question",
+    title: "Add Flashcard",
+    path: "/add-flashcard",
     cName: "dropdown-link",
   },
   {
-    title: "Edit Question",
-    path: "/edit-question",
+    title: "Edit Flashcard",
+    path: "/edit-flashcard",
     cName: "dropdown-link",
   },
   {
-    title: "Remove Question",
-    path: "/remove-question",
+    title: "Remove Flashcard",
+    path: "/remove-flashcard",
     cName: "dropdown-link",
   },
 ];
