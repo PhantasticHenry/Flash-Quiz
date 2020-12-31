@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
-import { IoIosArrowDropdown, IoMdArrowDropdownCircle } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
@@ -81,9 +80,7 @@ function Navbar() {
             onMouseEnter={() => setHover(!hover)}
             onMouseLeave={() => setHover(!hover)}
           >
-            {/* need to figure out  how to remove arrow on side expand */}
-            Flashcards{" "}
-            {hover ? <IoMdArrowDropdownCircle /> : <IoIosArrowDropdown />}
+            Flashcards
           </NavLink>
           {dropdown && <Dropdown />}
         </li>
