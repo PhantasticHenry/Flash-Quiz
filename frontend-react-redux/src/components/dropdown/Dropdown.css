@@ -7,12 +7,13 @@
 }
 
 .dropdown-menu li {
-  background: #1888ff;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   cursor: pointer;
 }
 
 .dropdown-menu li:hover {
-  background: #5cabff;
+  /* background: #1fb150; */
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
 }
 
 .dropdown-menu.clicked {
@@ -26,4 +27,9 @@
   text-decoration: none;
   color: #fff;
   padding: 16px;
+}
+
+.dropdown-link:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
