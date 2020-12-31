@@ -76,8 +76,6 @@ function Quiz() {
     }
   };
 
-  // console.log("Current", index);
-  // console.log("***", SAMPLE_QUESTIONS.length);
   console.log(SAMPLE_QUESTIONS.pop());
 
   return (
