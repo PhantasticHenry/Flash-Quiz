@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { FaTimes, FaBars, FaArrowDown } from "react-icons/fa";
+import { FaTimes, FaBars } from "react-icons/fa";
+import { IoIosArrowDropdown, IoMdArrowDropdownCircle } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import Dropdown from "../dropdown";
-import Button from "../button";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
-  // const [closeMenu, setCloseMenu] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
   const onMouseEnter = () => {
@@ -75,10 +74,14 @@ function Navbar() {
         >
           <NavLink
             className="nav-link"
-            to="#"
+            activeClassName="selected"
+            to="/flashcards"
             onClick={() => setClicked(false)}
+            onMouseEnter={() => setClicked(!clicked)}
+            onMouseLeave={() => setClicked(!clicked)}
           >
-            Questions <FaArrowDown />
+            Flashcards{" "}
+            {clicked ? <IoMdArrowDropdownCircle /> : <IoIosArrowDropdown />}
           </NavLink>
           {dropdown && <Dropdown />}
         </li>
@@ -92,7 +95,6 @@ function Navbar() {
           </NavLink>
         </li>
       </ul>
-      {/* <Button /> */}
     </nav>
   );
 }
