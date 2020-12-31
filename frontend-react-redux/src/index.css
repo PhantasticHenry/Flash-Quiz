@@ -12,9 +12,13 @@ code {
     monospace;
 } */
 
-body {
-  background-image: url("./images/home.jpeg");
-  background-size: 100%;
+body,
+html {
+  /* background-image: url("./images/home.jpeg"); */
+  height: 100%;
   margin: 0;
-  padding: 0 0;
+}
+
+:root {
+  --primary: #1fb150;
 }
