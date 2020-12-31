@@ -26,6 +26,40 @@ function Navbar() {
     }
   };
 
+  const sidebar = () => {
+    return (
+      <div className={!clicked ? "hide" : ""}>
+        <li className="nav-item">
+          <NavLink
+            className="nav-link"
+            to="/add-flashcard"
+            onClick={() => setClicked(false)}
+          >
+            Add Flashcard
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            className="nav-link"
+            to="/edit-flashcard"
+            onClick={() => setClicked(false)}
+          >
+            Edit Flashcard
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            className="nav-link"
+            to="/remove-flashcard"
+            onClick={() => setClicked(false)}
+          >
+            Remove Flashcard
+          </NavLink>
+        </li>
+      </div>
+    );
+  };
+
   return (
     <nav className="navbar">
       <NavLink to="/">
@@ -84,15 +118,7 @@ function Navbar() {
           </NavLink>
           {dropdown && <Dropdown />}
         </li>
-        <li className="nav-item">
-          <NavLink
-            className="nav-link-dropdown"
-            to="/add-question"
-            onClick={() => setClicked(false)}
-          >
-            Add Question
-          </NavLink>
-        </li>
+        {sidebar()}
       </ul>
     </nav>
   );
