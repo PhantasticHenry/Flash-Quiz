@@ -14,9 +14,4 @@ export const DropdownItems = [
     path: "/remove-question",
     cName: "dropdown-link",
   },
-  {
-    title: "Flashcards",
-    path: "/flashcards",
-    cName: "dropdown-link",
-  },
 ];
