@@ -8,8 +8,24 @@ import Button from "../button";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
-  const [closeMenu, setCloseMenu] = useState(false);
+  // const [closeMenu, setCloseMenu] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -24,10 +40,10 @@ function Navbar() {
         )}
       </div>
       <ul className={clicked ? "nav-menu active" : "nav-menu"}>
-        <li className="nav-item">
+        <li className="nav-item-home">
           <NavLink
             className="nav-link"
-            onClick={() => setCloseMenu(!closeMenu)}
+            onClick={() => setClicked(false)}
             to="/"
           >
             Home
@@ -36,7 +52,7 @@ function Navbar() {
         <li className="nav-item">
           <NavLink
             className="nav-link"
-            onClick={() => setCloseMenu(!closeMenu)}
+            onClick={() => setClicked(false)}
             to="/start-quiz"
           >
             Start Quiz
@@ -47,23 +63,31 @@ function Navbar() {
             High Score
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li
+          className="nav-item"
+          onMouseEnter={() => onMouseEnter()}
+          onMouseLeave={() => onMouseLeave()}
+        >
           <NavLink
-            className="nav-link arrow-down"
-            to="/#"
-            onClick={() => setDropdown(!dropdown)}
+            className="nav-link"
+            to="#"
+            onClick={() => setClicked(false)}
           >
             Questions <FaArrowDown />
           </NavLink>
           {dropdown && <Dropdown />}
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link-dropdown" to="/add-question">
+          <NavLink
+            className="nav-link-dropdown"
+            to="/add-question"
+            onClick={() => setClicked(false)}
+          >
             Add Question
           </NavLink>
         </li>
       </ul>
-      <Button />
+      {/* <Button /> */}
     </nav>
   );
 }
