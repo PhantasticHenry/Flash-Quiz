@@ -9,6 +9,7 @@ import Dropdown from "../dropdown";
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -69,19 +70,20 @@ function Navbar() {
         </li>
         <li
           className="nav-item"
-          onMouseEnter={() => onMouseEnter()}
-          onMouseLeave={() => onMouseLeave()}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         >
           <NavLink
             className="nav-link"
             activeClassName="selected"
             to="/flashcards"
             onClick={() => setClicked(false)}
-            onMouseEnter={() => setClicked(!clicked)}
-            onMouseLeave={() => setClicked(!clicked)}
+            onMouseEnter={() => setHover(!hover)}
+            onMouseLeave={() => setHover(!hover)}
           >
+            {/* need to figure out  how to remove arrow on side expand */}
             Flashcards{" "}
-            {clicked ? <IoMdArrowDropdownCircle /> : <IoIosArrowDropdown />}
+            {hover ? <IoMdArrowDropdownCircle /> : <IoIosArrowDropdown />}
           </NavLink>
           {dropdown && <Dropdown />}
         </li>
