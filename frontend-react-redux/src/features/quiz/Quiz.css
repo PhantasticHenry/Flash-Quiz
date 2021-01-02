@@ -4,7 +4,35 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  font-size: 1.5rem;
+}
+
+/* ipad pro */
+@media screen and (max-width: 1024px) {
+  .quiz-container {
+    background-image: url("../../images/quiz-time-lg.jpeg");
+    transition: all 0.5s ease;
+  }
+}
+
+/* iphone */
+@media screen and (max-width: 768px) {
+  .quiz-container {
+    background-image: url("../../images/quiz-time-md.jpeg");
+    transition: all 0.5s ease;
+  }
+}
+
+/* smaller phones */
+@media screen and (max-width: 600px) {
+  .quiz-container {
+    background-image: url("../../images/quiz-time-small.jpeg");
+    transition: all 0.5s ease;
+  }
 }
