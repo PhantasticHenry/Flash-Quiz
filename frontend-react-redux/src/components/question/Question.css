@@ -1,0 +1,23 @@
+.question {
+  /* border: pink;
+  border-style: double; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  width: 65.5vw;
+  position: absolute;
+  top: 23.3%;
+  left: 19.2%;
+  padding-left: 90px;
+}
+
+/* @media screen and (min-width: 960px) {
+  .question {
+    transform: translate(0, -30%);
+    height: 30vh;
+    width: 58vw;
+    position: absolute;
+    left: 10px;
+  }
+} */
