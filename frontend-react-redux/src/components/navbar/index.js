@@ -92,15 +92,6 @@ function Navbar() {
             Start Quiz
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink
-            className="nav-link"
-            to="/high-score"
-            activeClassName="selected"
-          >
-            High Score
-          </NavLink>
-        </li>
         <li
           className="nav-item"
           onMouseEnter={onMouseEnter}
