@@ -15,7 +15,8 @@ code {
 body,
 html {
   /* background-image: url("./images/home.jpeg"); */
-  height: 100%;
+  min-height: 100%;
+
   margin: 0;
 }
 
