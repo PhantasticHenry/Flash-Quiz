@@ -1,0 +1,56 @@
+.answers {
+  /* border: green;
+  border-style: double; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 89.5%;
+  height: 25.5%;
+  position: relative;
+  top: 54%;
+  left: 5.2%;
+}
+
+/* 2420 x 1724 */
+.option-1 {
+  /* border: pink;
+  border-style: double; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29%;
+  width: 47.5%;
+  position: relative;
+  margin-right: 5%;
+  margin-bottom: 8.5%;
+}
+
+.option-2 {
+  /* border: pink;
+  border-style: double; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29%;
+  width: 47.5%;
+}
+.option-3 {
+  /* border: pink;
+  border-style: double; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29%;
+  width: 47.5%;
+  margin-right: 5%;
+}
+.option-4 {
+  /* border: pink;
+  border-style: double; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29%;
+  width: 47.5%;
+}
