@@ -1,13 +1,16 @@
 class QuizzesController < ApplicationController
-
+before_action :set_flashcards
   def index 
     @quizzes = Quiz.all 
     render json: @quizzes
   end
 
-  def create 
+  def create
     quiz = Quiz.new(quiz_params)
     if quiz.save! 
+      @flashcards.map do |flashcard|
+        QuizFlashcard.create(quiz_id: quiz.id, flashcard_id: flashcard.id )
+      end
       render json: quiz
     else 
       render json: {error: "Something went wrong during creation"}
@@ -18,5 +21,9 @@ class QuizzesController < ApplicationController
   
   def quiz_params
     params.require(:quiz).permit(:player, :high_score)
+  end
+
+  def set_flashcards 
+    @flashcards = Flashcard.all
   end
 end
