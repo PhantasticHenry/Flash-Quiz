@@ -12,6 +12,7 @@ class FlashcardsController < ApplicationController
       render json: flashcard
     else 
       render json: {error: "Something went wrong during creation"}
+    end
   end
 
   def edit 
@@ -22,7 +23,7 @@ class FlashcardsController < ApplicationController
     if @flashcard.update(flashcard_params)
       render json: @flashcard
     else 
-      render json: render json: {error: "Something went wrong during update"}
+      render json: {error: "Something went wrong during update"}
     end
   end
 
