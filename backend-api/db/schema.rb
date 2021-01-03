@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_000222) do
     t.string "category"
     t.string "question"
     t.string "correct_answer"
-    t.string "incorrect_answers"
+    t.string "incorrect_answers", default: [], array: true
     t.bigint "quiz_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_01_03_000222) do
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.string "player"
-    t.integer "high_score"
+    t.string "player", default: "Player"
+    t.integer "high_score", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
