@@ -1,0 +1,2 @@
+class QuizFlashcardsController < ApplicationController
+end
