@@ -4,7 +4,8 @@ class CreateFlashcards < ActiveRecord::Migration[6.0]
       t.string :category
       t.string :question
       t.string :correct_answer
-      t.string :incorrect_answers, array: true, default: []
+      t.string :incorrect_answers
+      t.belongs_to :quiz, null: false, foreign_key: true
 
       t.timestamps
     end
