@@ -4,11 +4,13 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import Dropdown from "../dropdown";
+import SelectCategory from "../selectCategory";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [hover, setHover] = useState(false);
+  const [selectCategory, setSelectCategory] = useState(false);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -24,6 +26,10 @@ function Navbar() {
     } else {
       setDropdown(false);
     }
+  };
+
+  const closeSelectCategory = () => {
+    setSelectCategory(false);
   };
 
   const sidebar = () => {
@@ -83,14 +89,23 @@ function Navbar() {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
+          <span
+            className="nav-link"
+            onClick={() => setSelectCategory(!selectCategory)}
+          >
+            Start Quiz
+          </span>
+          {selectCategory && (
+            <SelectCategory closeSelectCategory={closeSelectCategory} />
+          )}
+          {/* <NavLink
             className="nav-link"
             activeClassName="selected"
             onClick={() => setClicked(false)}
             to="/start-quiz"
           >
             Start Quiz
-          </NavLink>
+          </NavLink> */}
         </li>
         <li
           className="nav-item"
