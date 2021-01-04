@@ -7,6 +7,7 @@ export const getQuizzes = () => {
       .then((res) => res.json())
       .then((quizzes) =>
         dispatch({ type: types.FETCH_QUIZZES, payload: quizzes })
-      );
+      )
+      .catch((err) => alert(err));
   };
 };
