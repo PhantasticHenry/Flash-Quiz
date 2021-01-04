@@ -1,0 +1,27 @@
+.select-category {
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 38vh;
+  width: 37.5vw;
+  position: absolute;
+  top: 50.5%;
+  left: 50.1%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  -webkit-box-shadow: 5px 5px 29px 7px #fff;
+  box-shadow: 5px 5px 29px 7px #fff;
+  border-radius: 1.5rem;
+  z-index: 1;
+  opacity: 1;
+}
+
+.select {
+  color: #c261b5;
+  display: flex;
+  padding: 3rem;
+}
