@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { flashcardReducer as flashcard } from "./flashcardReducer";
-import { quizReducer as quiz } from "./quizReducer";
+import { flashcardReducer as flashcards } from "./flashcardReducer";
+import { quizReducer as quizzes } from "./quizReducer";
 
 export const rootReducer = combineReducers({
-  flashcard,
-  quiz,
+  flashcards,
+  quizzes,
 });
