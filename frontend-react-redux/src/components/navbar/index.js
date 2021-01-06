@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import Dropdown from "../dropdown";
 import SelectCategory from "../selectCategory";
+import Quiz from "../../features/quiz";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [hover, setHover] = useState(false);
-  const [selectCategory, setSelectCategory] = useState(false);
+  const [categories, setCategories] = useState(false);
+  const [category, setCategory] = useState(null);
+  const [selected, setSelected] = useState(false);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -28,8 +31,18 @@ function Navbar() {
     }
   };
 
-  const closeSelectCategory = () => {
-    setSelectCategory(false);
+  const closeCategories = () => {
+    setCategories(false);
+    setSelected(true);
+  };
+
+  // const handleClick = () => {
+  //   setClicked(false);
+  //   setCategories(!categories);
+  // };
+
+  const handleCategory = (e) => {
+    setCategory(e.target.name);
   };
 
   const sidebar = () => {
@@ -89,23 +102,28 @@ function Navbar() {
           </NavLink>
         </li>
         <li className="nav-item">
-          <span
+          <NavLink
+            to="/"
             className="nav-link"
-            onClick={() => setSelectCategory(!selectCategory)}
+            onClick={() => setCategories(!categories)}
           >
             Start Quiz
-          </span>
-          {selectCategory && (
-            <SelectCategory closeSelectCategory={closeSelectCategory} />
+          </NavLink>
+          {categories && (
+            <SelectCategory
+              closeCategories={closeCategories}
+              category={handleCategory}
+            />
           )}
           {/* <NavLink
             className="nav-link"
             activeClassName="selected"
-            onClick={() => setClicked(false)}
+            onClick={handleClick}
             to="/start-quiz"
           >
             Start Quiz
-          </NavLink> */}
+          </NavLink>
+          {categories && <SelectCategory closeCategories={closeCategories} />} */}
         </li>
         <li
           className="nav-item"
