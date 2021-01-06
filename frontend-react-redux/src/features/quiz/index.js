@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./Quiz.css";
 import Answers from "../../components/answers";
-import Correct from "../../components/correct";
 import Question from "../../components/question";
 import Result from "../../components/result";
 
@@ -44,6 +44,13 @@ function Quiz() {
       incorrect_answers: ["121", "9", "23"],
     },
   ];
+
+  // useEffect(() => {
+  //   console.log("*****", category);
+  // }, []);
+
+  const dispatch = useDispatch();
+  const quiz = useSelector((state) => state.quiz);
 
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
