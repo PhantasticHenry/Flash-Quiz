@@ -4,8 +4,9 @@ import "./Quiz.css";
 import Answers from "../../components/answers";
 import Question from "../../components/question";
 import Result from "../../components/result";
+import SelectCategory from "../../components/selectCategory";
 
-function Quiz() {
+function Quiz(props) {
   const SAMPLE_QUESTIONS = [
     {
       id: 1,
@@ -44,11 +45,9 @@ function Quiz() {
       incorrect_answers: ["121", "9", "23"],
     },
   ];
-
-  // useEffect(() => {
-  //   console.log("*****", category);
-  // }, []);
-
+  useEffect(() => {
+    console.log("mounted", props);
+  }, []);
   const dispatch = useDispatch();
   const quiz = useSelector((state) => state.quiz);
 
@@ -56,6 +55,10 @@ function Quiz() {
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
+  const [closeCategories, setCloseCategories] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [categorySelect, setCategorySelect] = useState(false);
+  const [category, setCategory] = useState(undefined);
 
   let question = SAMPLE_QUESTIONS[index].question;
   let correct_answer = SAMPLE_QUESTIONS[index].correct_answer;
@@ -83,9 +86,25 @@ function Quiz() {
     }
   };
 
+  const handleCategories = () => {
+    setCloseCategories(!closeCategories);
+  };
+
   console.log(SAMPLE_QUESTIONS.pop());
 
   return (
+    // <div className="quiz-container">
+    //   {gameFinished ? (
+    //     <>
+    //       <Result correct={correct} incorrect={incorrect} />
+    //     </>
+    //   ) : (
+    //     <>
+    //       <Question question={question} />
+    //       <Answers answers={answers} handleClick={handleClick} />
+    //     </>
+    //   )}
+    // </div>
     <div className="quiz-container">
       {gameFinished ? (
         <>
