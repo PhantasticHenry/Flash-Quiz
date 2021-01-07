@@ -1,11 +1,15 @@
 import React from "react";
 import "./Category.css";
 
-function Category({ category }) {
+function Category({ category, selectCategory }) {
   return (
-    <button className="btn-category" name={category}>
+    <span
+      className="category"
+      name={category}
+      onClick={(e) => selectCategory(e)}
+    >
       {category}
-    </button>
+    </span>
   );
 }
 
