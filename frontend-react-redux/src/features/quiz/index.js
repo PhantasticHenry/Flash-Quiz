@@ -4,7 +4,9 @@ import "./Quiz.css";
 import Answers from "../../components/answers";
 import Question from "../../components/question";
 import Result from "../../components/result";
-import SelectCategory from "../../components/selectCategory";
+import { startQuiz } from "../../actions/quiz/startQuiz";
+import { getQuizFlashcards } from "../../actions/getQuizFlashcards";
+import { getFlashcards } from "../../actions/flashcard/getFlashcards";
 
 function Quiz(props) {
   const SAMPLE_QUESTIONS = [
@@ -45,20 +47,29 @@ function Quiz(props) {
       incorrect_answers: ["121", "9", "23"],
     },
   ];
-  useEffect(() => {
-    console.log("mounted", props);
-  }, []);
+  const category = props.location.category;
   const dispatch = useDispatch();
-  const quiz = useSelector((state) => state.quiz);
+
+  const newQuiz = {
+    player: "",
+    high_score: 0,
+    category: category,
+  };
+
+  useEffect(() => {
+    dispatch(startQuiz(newQuiz));
+  }, []);
+
+  const quizzes = useSelector((state) => state.quizzes);
+
+  useEffect(() => {
+    console.log("quizzes", quizzes);
+  }, [quizzes]);
 
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
-  const [closeCategories, setCloseCategories] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const [categorySelect, setCategorySelect] = useState(false);
-  const [category, setCategory] = useState(undefined);
 
   let question = SAMPLE_QUESTIONS[index].question;
   let correct_answer = SAMPLE_QUESTIONS[index].correct_answer;
@@ -85,26 +96,11 @@ function Quiz(props) {
       nextQuestion();
     }
   };
-
-  const handleCategories = () => {
-    setCloseCategories(!closeCategories);
-  };
+  10;
 
   console.log(SAMPLE_QUESTIONS.pop());
 
   return (
-    // <div className="quiz-container">
-    //   {gameFinished ? (
-    //     <>
-    //       <Result correct={correct} incorrect={incorrect} />
-    //     </>
-    //   ) : (
-    //     <>
-    //       <Question question={question} />
-    //       <Answers answers={answers} handleClick={handleClick} />
-    //     </>
-    //   )}
-    // </div>
     <div className="quiz-container">
       {gameFinished ? (
         <>
