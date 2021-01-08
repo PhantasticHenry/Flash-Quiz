@@ -8,11 +8,11 @@ class QuizzesController < ApplicationController
   def create
     quiz = Quiz.new(quiz_params)
     if quiz.save! 
-      @flashcards = Flashcard.select { |flashcard| flashcard.category === quiz.category }
-      @flashcards.map do |flashcard|
+      flashcards = Flashcard.select { |flashcard| flashcard.category === quiz.category }
+      flashcards.map do |flashcard|
         QuizFlashcard.create(quiz_id: quiz.id, flashcard_id: flashcard.id)
       end
-      render json: quiz
+      render json: {quiz: quiz, quiz_flashcards: quiz.quiz_flashcards }
     else 
       render json: {error: "Something went wrong during creation"}
     end
