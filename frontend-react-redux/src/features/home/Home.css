@@ -1,11 +1,52 @@
 .home {
-  background-image: url("../../images/home.jpeg");
+  background: url("../../images/home.jpeg");
   background-size: cover;
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
+  background-repeat: no-repeat;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+@keyframes STAR-MOVE {
+  from {
+    left: 0;
+    top: 0;
+  }
+  to {
+    left: -10000px;
+    top: -2000px;
+  }
+}
+
+.stars-layer-1 {
+  background: url("../../images/stars-layer-1.png") repeat 20% 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+
+  -webkit-animation-name: STAR-MOVE;
+  -webkit-animation-duration: 150s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.stars-layer-2 {
+  background: url("../../images/stars-layer-2.png") repeat 35% 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+
+  -webkit-animation-name: STAR-MOVE;
+  -webkit-animation-duration: 100s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
 }
