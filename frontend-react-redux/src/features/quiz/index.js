@@ -5,8 +5,8 @@ import Answers from "../../components/answers";
 import Question from "../../components/question";
 import Result from "../../components/result";
 import { startQuiz } from "../../actions/quiz/startQuiz";
+// import { getFlashcards } from "../../actions/flashcard/getFlashcards";
 import { getQuizFlashcards } from "../../actions/getQuizFlashcards";
-import { getFlashcards } from "../../actions/flashcard/getFlashcards";
 
 function Quiz(props) {
   const SAMPLE_QUESTIONS = [
@@ -50,31 +50,48 @@ function Quiz(props) {
   const category = props.location.category;
   const dispatch = useDispatch();
 
-  const newQuiz = {
-    player: "",
-    high_score: 0,
-    category: category,
-  };
-
-  useEffect(() => {
-    dispatch(startQuiz(newQuiz));
-  }, []);
-
-  const quizzes = useSelector((state) => state.quizzes);
-
-  useEffect(() => {
-    console.log("quizzes", quizzes);
-  }, [quizzes]);
-
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
+  const [quizID, setQuizID] = useState(undefined);
+  // const [category, setCategory] = useState("");
+
+  const quizzes = useSelector((state) => state.quizzes);
 
   let question = SAMPLE_QUESTIONS[index].question;
   let correct_answer = SAMPLE_QUESTIONS[index].correct_answer;
   let incorrect_answers = SAMPLE_QUESTIONS[index].incorrect_answers;
   let answers = [...incorrect_answers, correct_answer];
+
+  // useEffect(() => {
+  //   dispatch(getFlashcards());
+  // }, []);
+
+  useEffect(() => {
+    // setCategory(props.location.category);
+    const newQuiz = {
+      player: "",
+      high_score: 0,
+      category: category,
+    };
+    dispatch(startQuiz(newQuiz));
+    // setQuizID(quizzes[quizzes.length - 1].quiz.id);
+  }, []);
+
+  useEffect(() => {
+    console.log("quizzes", quizzes);
+    // setQuizID(quizzes[quizzes.length - 1].quiz.id);
+    // quizzes[quizzes.length - 1].quiz.id !== undefined
+    quizzes.length >= 1
+      ? setQuizID(quizzes[quizzes.length - 1].quiz.id)
+      : console.log("Something is wrong");
+    console.log("QUIZ ID", quizID);
+  }, [quizzes]);
+
+  // useEffect(() => {
+  //   dispatch(getQuizFlashcards(quizID));
+  // }, []);
 
   const nextQuestion = () => {
     setIndex(index + 1);
