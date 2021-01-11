@@ -7,6 +7,8 @@ export const getFlashcards = () => {
       .then((flashcards) =>
         dispatch({ type: types.FETCH_FLASHCARDS, payload: flashcards })
       )
-      .catch((error) => console.log("**ERROR**", error));
+      .catch((error) => {
+        console.log("**ERROR**", error);
+      });
   };
 };
