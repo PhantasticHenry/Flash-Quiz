@@ -19,6 +19,6 @@ export const startQuiz = (quiz) => {
           ? alert(quiz.details)
           : dispatch({ type: types.START_QUIZ, payload: quiz });
       })
-      .catch((error) => alert(error));
+      .catch((err) => console.log("ERROR: ", err));
   };
 };
