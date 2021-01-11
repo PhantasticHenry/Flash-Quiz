@@ -8,7 +8,13 @@ function Home() {
   useEffect(() => {
     dispatch(getFlashcards());
   }, []);
-  return <div className="home">We are at Home!!!!!!</div>;
+
+  return (
+    <div className="home">
+      <div className="stars-layer-1"></div>
+      <div className="stars-layer-2"></div>
+    </div>
+  );
 }
 
 export default Home;
