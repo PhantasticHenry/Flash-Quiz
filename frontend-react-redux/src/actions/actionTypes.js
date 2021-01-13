@@ -7,7 +7,7 @@ export const FETCH_QUIZZES = "FETCH_QUIZZES";
 export const FETCH_QUIZ = "FETCH_QUIZ";
 export const ADD_QUIZ = "ADD_QUIZ";
 export const START_QUIZ = "START_QUIZ";
-export const EDIT_QUIZ = "EDIT_QUIZ";
+export const UPDATE_QUIZ = "UPDATE_QUIZ";
 
 export const FETCH_QUIZ_FLASHCARDS = "FETCH_QUIZ_FLASHCARDS";
 
