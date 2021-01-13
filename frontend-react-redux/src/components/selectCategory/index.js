@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 import "./SelectCategory.css";
 import Category from "../category";
 
@@ -20,7 +20,6 @@ function SelectCategory({ closeCategories }) {
   };
 
   useEffect(() => {
-    console.log("category is:", category);
     category !== undefined && closeCategories();
   }, [category]);
 
