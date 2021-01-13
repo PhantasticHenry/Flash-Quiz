@@ -21,7 +21,7 @@ function SelectCategory({ closeCategories }) {
 
   useEffect(() => {
     category !== undefined && closeCategories();
-  }, [category]);
+  }, [category, closeCategories]);
 
   return (
     <div className="select-category">
