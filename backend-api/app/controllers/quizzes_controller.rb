@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
 
-  def index 
-    @quizzes = Quiz.all 
+  def index
+    @quizzes = Quiz.all
     render json: @quizzes
   end
 
@@ -16,6 +16,12 @@ class QuizzesController < ApplicationController
     else 
       render json: {error: "Something went wrong during creation"}
     end
+  end
+
+  def show 
+    @quiz = Quiz.find_by(id: params[:id])
+    @quiz_flashcards = QuizFlashcard.select { |qfc| qfc.quiz.id === @quiz.id}
+    render json: {quiz: @quiz, quiz_flashcards: @quiz_flashcards}
   end
 
   private 
