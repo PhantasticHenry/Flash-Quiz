@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+  before_action :set_quiz
 
   def index
     @quizzes = Quiz.all
@@ -19,14 +20,22 @@ class QuizzesController < ApplicationController
   end
 
   def show 
-    @quiz = Quiz.find_by(id: params[:id])
+    # @quiz = Quiz.find_by(id: params[:id])
     @quiz_flashcards = QuizFlashcard.select { |qfc| qfc.quiz.id === @quiz.id}
     render json: {quiz: @quiz, quiz_flashcards: @quiz_flashcards}
+  end
+  
+  def update 
+    @quiz.update!(quiz_params) ? (render json: @quiz) : (render json: {error: "Something went wrong during update."})
   end
 
   private 
   
   def quiz_params
     params.require(:quiz).permit(:player, :high_score, :category)
+  end
+
+  def set_quiz 
+    @quiz = Quiz.find_by(id: params[:id])
   end
 end
