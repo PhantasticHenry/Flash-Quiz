@@ -6,7 +6,7 @@ function Answers({ answers, handleClick }) {
     <li
       onClick={handleClick}
       key={i}
-      value={answer}
+      name={answer}
       className={`option-${i + 1}`}
     >
       {answer}
