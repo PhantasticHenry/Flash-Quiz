@@ -1,32 +1,95 @@
-.result {
+.result-container {
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40vh;
-  width: 40vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 2rem;
-  transform: translate(-50%, -50%);
-  padding-left: 2.5rem;
-  -webkit-box-shadow: 5px 5px 29px 7px #fff;
-  box-shadow: 5px 5px 29px 7px #fff;
-  border-radius: 1rem;
-}
-
-.result a {
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  position: relative;
-  top: 30%;
-  right: 10%;
+  opacity: 0.6;
+  display: flexbox;
   font-size: 1.5rem;
 }
 
-.result a:hover {
+.result {
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  opacity: 0.6;
+  /* background: transparent; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 2rem 2rem;
+  height: 25vh;
+  width: 50vw;
+  position: absolute;
+  top: 36%;
+  left: 52%;
+  border-radius: 1rem;
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 5px 5px 29px 7px #fff;
+  box-shadow: 5px 5px 29px 7px #fff;
+}
+
+.result-container a {
+  /* background: linear-gradient(90deg, rgb(104, 40, 40) 0%, rgb(26, 23, 23) 100%); */
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  height: 7vh;
+  width: 42.5vw;
+  top: 59%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.result-container a:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+}
+
+.name {
+  /* background: linear-gradient(90deg, rgb(104, 40, 40) 0%, rgb(26, 23, 23) 100%); */
+
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  align-items: center;
+  /* flex-direction: row; */
+  height: 7vh;
+  width: 42vw;
+  position: absolute;
+  left: 5%;
+  top: 59%;
+  border-radius: 0.5rem;
+}
+
+.name input {
+  background: transparent;
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+  border: none;
+  border-radius: 1rem;
+  height: 60%;
+  width: 50%;
+  outline: none;
+  box-shadow: 0px 4px 20px 0px transparent;
+  transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out,
+    0.1s padding ease-in-out;
+  -webkit-appearance: none;
+}
+
+.name input:focus,
+input:hover,
+button {
+  background-color: aqua;
+  border: #fff;
+  border-style: double;
+  box-shadow: 5px 5px 29px 7px #fff;
+  top: 4px;
+  opacity: 1;
+}
+
+.name button {
+  width: 10%;
+  height: 75%;
+  border-radius: 1.5rem;
 }
