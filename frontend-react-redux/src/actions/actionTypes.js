@@ -4,6 +4,7 @@ export const EDIT_FLASHCARD = "EDIT_FLASHCARD";
 export const REMOVE_FLASHCARD = "REMOVE_FLASHCARD";
 
 export const FETCH_QUIZZES = "FETCH_QUIZZES";
+export const FETCH_QUIZ = "FETCH_QUIZ";
 export const ADD_QUIZ = "ADD_QUIZ";
 export const START_QUIZ = "START_QUIZ";
 export const EDIT_QUIZ = "EDIT_QUIZ";
