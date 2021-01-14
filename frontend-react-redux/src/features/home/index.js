@@ -1,19 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import "./Home.css";
-import { getFlashcards } from "../../actions/flashcard/getFlashcards";
-import { getQuizzes } from "../../actions/quiz/getQuizzes";
 
 function Home() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getFlashcards());
-  }, []);
-
-  useEffect(() => {
-    dispatch(getQuizzes());
-  }, []);
-
   return (
     <div className="home">
       <div className="stars-layer-1"></div>
