@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import Dropdown from "../dropdown";
 import SelectCategory from "../selectCategory";
-import Quiz from "../../features/quiz";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
@@ -14,6 +13,7 @@ function Navbar() {
   const [categories, setCategories] = useState(false);
   const [category, setCategory] = useState(null);
   const [selected, setSelected] = useState(false);
+  const [startQuiz, setStartQuiz] = useState(false);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -36,13 +36,15 @@ function Navbar() {
     setSelected(true);
   };
 
-  // const handleClick = () => {
-  //   setClicked(false);
-  //   setCategories(!categories);
-  // };
-
   const handleCategory = (e) => {
     setCategory(e.target.name);
+    setSelected(!selected);
+  };
+
+  const handleClick = () => {
+    setSelected(false);
+    setClicked(false);
+    setCategories(false);
   };
 
   const sidebar = () => {
@@ -81,7 +83,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <NavLink to="/">
+      <NavLink to="/" onClick={() => handleClick()}>
         <img className="navbar-logo" src={logo} alt="logo" />
       </NavLink>
       <div className="menu-icon">
@@ -93,18 +95,14 @@ function Navbar() {
       </div>
       <ul className={clicked ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item-home">
-          <NavLink
-            className="nav-link"
-            onClick={() => setClicked(false)}
-            to="/"
-          >
+          <NavLink className="nav-link" onClick={() => handleClick()} to="/">
             Home
           </NavLink>
         </li>
         <li className="nav-item">
           <NavLink
             to="/"
-            className="nav-link"
+            className={selected ? "nav-link selected" : "nav-link"}
             onClick={() => setCategories(!categories)}
           >
             Start Quiz
@@ -115,15 +113,17 @@ function Navbar() {
               category={handleCategory}
             />
           )}
-          {/* <NavLink
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/high-scores"
             className="nav-link"
             activeClassName="selected"
-            onClick={handleClick}
-            to="/start-quiz"
+            onClick={() => handleClick()}
+            // onClick={() => setCategories(false)}
           >
-            Start Quiz
+            High Scores
           </NavLink>
-          {categories && <SelectCategory closeCategories={closeCategories} />} */}
         </li>
         <li
           className="nav-item"
