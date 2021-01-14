@@ -1,52 +1,52 @@
 .high-scores {
-  background-image: url("../../images/home.jpeg");
+  background: rgba(223, 94, 255, 0.609);
   background-size: cover;
   height: 100vh;
   width: 100vw;
   text-align: center;
+  transition: 0.5s ease-in-out;
+  display: flex;
 }
 
 .table-scroll {
-  border: red;
-  border-style: double;
-  color: #000;
-  width: 100%;
-  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  justify-self: right;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  color: #fff;
+  border: violet;
+  border-style: solid;
+  border-radius: 2.5rem;
+  width: 55%;
+  height: 60%;
   overflow: scroll;
+  position: absolute;
+  top: 21.5%;
+  left: 24.5%;
 }
+
 .table-scroll table {
   position: relative;
   border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
 }
 .thead-col {
   position: absolute;
-  margin-top: 3rem;
   z-index: 998;
 }
-.thead-row {
-  position: absolute;
-  margin-left: 9rem;
-  z-index: 999;
-}
+
 .table-scroll tbody {
-  display: block;
-  margin-left: 9rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
+
 .table-scroll th,
-.table-scroll td {
-  min-width: 9rem;
+td {
   height: 3rem;
   box-sizing: border-box;
 }
 
-/* The looky good stuff */
-
 .table-scroll td,
-.table-scroll th {
-  padding: 0.75em 1.5em;
+th {
+  padding: 1rem;
 }
 .table-scroll th {
   font-weight: bold;
@@ -54,29 +54,11 @@
   white-space: nowrap;
 }
 .thead-row {
-  background-color: #31bc86;
-}
-.thead-col {
-  background-color: #2ea879;
-}
-.table-scroll tbody tr {
-  background-color: #fff;
-  transition: all 0.125s ease-in-out;
+  background-color: #431192;
 }
 
-.table-scroll body {
-  background: #444;
+.table-scroll tr:hover,
+.table-scroll:focus {
   color: #fff;
-  width: 95%;
-  margin: 0 auto;
-  font-family: "Muli", sans-serif;
-}
-.table-scroll header {
-  margin: 3rem 0;
-}
-
-@media screen and (min-width: 800px) {
-  .table-scroll body {
-    width: 60%;
-  }
+  background-color: rgba(223, 94, 255, 0.609);
 }
