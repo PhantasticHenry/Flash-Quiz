@@ -13,7 +13,6 @@ function Navbar() {
   const [categories, setCategories] = useState(false);
   const [category, setCategory] = useState(null);
   const [selected, setSelected] = useState(false);
-  const [startQuiz, setStartQuiz] = useState(false);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
