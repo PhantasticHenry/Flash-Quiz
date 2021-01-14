@@ -13,11 +13,11 @@
 @keyframes STAR-MOVE {
   from {
     left: 0;
-    top: 0;
+    bottom: 0;
   }
   to {
     left: -10000px;
-    top: -2000px;
+    bottom: -5000px;
   }
 }
 
