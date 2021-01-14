@@ -46,8 +46,8 @@
 }
 
 .nav-link:hover {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
-    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #73815c,
+    0 0 30px #73815c, 0 0 40px #73815c, 0 0 55px #73815c, 0 0 75px #73815c;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
@@ -55,6 +55,17 @@
 .selected {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+}
+
+.hs {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #df5eff9b,
+    0 0 30px #df5eff9b, 0 0 40px #df5eff9b, 0 0 55px #df5eff9b,
+    0 0 75px #df5eff9b;
+}
+
+.fc {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #157aff,
+    0 0 30px #157aff, 0 0 40px #157aff, 0 0 55px #157aff, 0 0 75px #157aff;
 }
 
 .menu-icon {
