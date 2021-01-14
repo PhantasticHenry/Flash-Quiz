@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import "./Result.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { updateQuiz } from "../../actions/quiz/updateQuiz";
+import HighScores from "../../features/highscores";
 
 // try and dispatch to update currentQuiz with score
 
@@ -13,6 +14,7 @@ function Result({ correct, incorrect, quizID, catgegory }) {
   // const quizID = currentQuiz.quiz.id;
 
   const [name, setName] = useState("");
+  const [clicked, setClicked] = useState(false);
 
   console.log("current quiz:", quizID);
   console.log("score", score);
@@ -39,15 +41,18 @@ function Result({ correct, incorrect, quizID, catgegory }) {
     catgegory: catgegory,
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     dispatch(updateQuiz(quizID, quiz));
+    setName("");
+    setClicked(!clicked);
   };
 
   return (
     <div className="result-container">
-      {handleResult()}
-      {/* <div className="name"> */}
-      <div onSubmit={() => handleClick()} className="name">
+      {!clicked ? handleResult() : <Redirect to="/top25" />}
+      <div className="name">
+        {/* <div onSubmit={(e) => handleClick(e)} className="name"> */}
         <label>Please enter name: </label>
         <span>&nbsp;&nbsp;</span>
         <input
@@ -55,7 +60,11 @@ function Result({ correct, incorrect, quizID, catgegory }) {
           value={name}
           placeholder="Enter name here"
         />
-        {name !== "" && <button type="submit">Enter</button>}
+        {name !== "" && (
+          <button onClick={handleClick} type="submit">
+            Enter
+          </button>
+        )}
       </div>
       <NavLink to="/">Try Again</NavLink>
     </div>
