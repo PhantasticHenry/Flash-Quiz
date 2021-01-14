@@ -6,6 +6,7 @@ import Quiz from "./features/quiz";
 import Home from "./features/home";
 import Navbar from "./components/navbar";
 import HighScores from "./features/highscores";
+import Flashcards from "./features/flashcards";
 import { getFlashcards } from "./actions/flashcard/getFlashcards";
 import { getQuizzes } from "./actions/quiz/getQuizzes";
 
@@ -27,7 +28,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/start-quiz" exact component={Quiz} />
-          <Route path="/top25" exact component={HighScores} />
+          <Route path="/high-scores" exact component={HighScores} />
+          <Route path="/flashcards" exact component={Flashcards} />
         </Switch>
       </Router>
     </div>
