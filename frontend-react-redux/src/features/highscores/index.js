@@ -9,44 +9,28 @@ function HighScores() {
   const top25 = sortedQuizzes.slice(0, 100);
 
   const renderPlayers = top25.map((quiz, i) => (
-    <tbody key={i}>
-      <tr>
-        <td>{quiz.player}</td>
-        <td>{quiz.high_score}</td>
-        <td>{quiz.category}</td>
-      </tr>
-    </tbody>
+    <tr key={i}>
+      <td>{quiz.player}</td>
+      <td>{quiz.high_score}</td>
+      <td>{quiz.category}</td>
+    </tr>
   ));
-
-  // const handleScroll = (e) => {
-  //   let scrollTop = e.srcElement.body.scrollTop;
-  // };
 
   return (
     <div className="high-scores">
-      <table className="table-scroll">
-        <thead className="thead-row">
-          <tr>
-            <th>Player</th>
-            <th>High Score</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        {renderPlayers}
-      </table>
+      <div className="table-scroll">
+        <table>
+          <thead className="thead-row">
+            <tr>
+              <th>Player</th>
+              <th>High Score</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>{renderPlayers}</tbody>
+        </table>
+      </div>
     </div>
-    // <div className="star-background">
-    //   <div className="high-scores">
-    //     <table>
-    //       <tr>
-    //         <th>Player</th>
-    //         <th>High Score</th>
-    //         <th>Category</th>
-    //       </tr>
-    //       {renderPlayers}
-    //     </table>
-    //   </div>
-    // </div>
   );
 }
 
