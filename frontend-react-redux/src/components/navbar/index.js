@@ -117,9 +117,8 @@ function Navbar() {
           <NavLink
             to="/high-scores"
             className="nav-link"
-            activeClassName="selected"
+            activeClassName="selected hs"
             onClick={() => handleClick()}
-            // onClick={() => setCategories(false)}
           >
             High Scores
           </NavLink>
@@ -131,9 +130,9 @@ function Navbar() {
         >
           <NavLink
             className="nav-link"
-            activeClassName="selected"
+            activeClassName="selected fc"
             to="/flashcards"
-            onClick={() => setClicked(false)}
+            onClick={() => handleClick()}
             onMouseEnter={() => setHover(!hover)}
             onMouseLeave={() => setHover(!hover)}
           >
