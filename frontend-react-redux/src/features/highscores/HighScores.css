@@ -1,11 +1,14 @@
 .high-scores {
-  background: rgba(223, 94, 255, 0.609);
-  background-size: cover;
+  background: #df5eff9b;
   height: 100vh;
   width: 100vw;
   text-align: center;
   transition: 0.5s ease-in-out;
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .table-scroll {
