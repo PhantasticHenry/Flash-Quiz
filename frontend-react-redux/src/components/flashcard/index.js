@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Flashcard.css";
+import "../../features/flashcards/Flashcards.css";
 
 function Flashcard({ flashcard }) {
   const [flip, setFlip] = useState(false);
@@ -9,9 +9,13 @@ function Flashcard({ flashcard }) {
     flashcard.correct_answer,
   ].sort(() => Math.random() - 0.5);
 
-  const answers = answersArray.map((answer) => (
-    <li className="answer">{answer}</li>
-  ));
+  const answers = answersArray.map((answer, i) => {
+    return (
+      <li key={i} className="answer">
+        {answer}
+      </li>
+    );
+  });
 
   return (
     <div
@@ -26,8 +30,6 @@ function Flashcard({ flashcard }) {
       ) : (
         <div className="back">{flashcard.correct_answer}</div>
       )}
-
-      {/* {flip ? flashcard.correct_answer : flashcard.question} */}
     </div>
   );
 }
