@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import "./SelectCategory.css";
 import Category from "../category";
 
-function SelectCategory({ closeCategories }) {
+function SelectCategory({ closeCategories, ...props }) {
   const [categorySelect, setCategorySelect] = useState(false);
   const [category, setCategory] = useState(undefined);
 
@@ -13,6 +13,7 @@ function SelectCategory({ closeCategories }) {
   );
 
   const uniqCat = [...new Set(categories)];
+  const path = props.path === "Flashcards" ? "/flashcards" : "/start-quiz";
 
   const handleClick = (e) => {
     setCategorySelect(true);
@@ -29,7 +30,7 @@ function SelectCategory({ closeCategories }) {
       <Category category={uniqCat} selectCategory={(e) => handleClick(e)} />
       {categorySelect && (
         <Redirect
-          to={{ pathname: "/start-quiz", category: category }}
+          to={{ pathname: `${path}`, category: category }}
           onClick={(e) => handleClick(e)}
         />
       )}
