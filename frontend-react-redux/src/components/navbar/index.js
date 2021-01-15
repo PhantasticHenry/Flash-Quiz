@@ -12,7 +12,9 @@ function Navbar() {
   const [hover, setHover] = useState(false);
   const [categories, setCategories] = useState(false);
   const [category, setCategory] = useState(null);
-  const [selected, setSelected] = useState(false);
+  const [selectQuiz, setSelectQuiz] = useState(false);
+  const [selectFlashcards, setSelectFlashcards] = useState(false);
+  const [path, setPath] = useState("");
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -32,18 +34,28 @@ function Navbar() {
 
   const closeCategories = () => {
     setCategories(false);
-    setSelected(true);
+    path === "Start Quiz" && setSelectQuiz(true);
+    path === "Flashcards" && setSelectFlashcards(true);
   };
 
-  const handleCategory = (e) => {
-    setCategory(e.target.name);
-    setSelected(!selected);
+  const toggleActive = (e) => {
+    console.log("targeting", e.target);
   };
 
   const handleClick = () => {
-    setSelected(false);
+    setSelectQuiz(false);
+    setSelectFlashcards(false);
     setClicked(false);
     setCategories(false);
+  };
+
+  const handlePath = (e) => {
+    setPath(e.target.innerText);
+    setCategories(!categories);
+    selectFlashcards &&
+      setSelectFlashcards(!setSelectFlashcards) &&
+      setSelectQuiz(false);
+    selectQuiz && setSelectQuiz(!selectQuiz) && setSelectFlashcards(false);
   };
 
   const sidebar = () => {
@@ -101,17 +113,12 @@ function Navbar() {
         <li className="nav-item">
           <NavLink
             to="/"
-            className={selected ? "nav-link selected" : "nav-link"}
-            onClick={() => setCategories(!categories)}
+            className={selectQuiz ? "nav-link selected" : "nav-link"}
+            onClick={(e) => handlePath(e)}
           >
             Start Quiz
           </NavLink>
-          {categories && (
-            <SelectCategory
-              closeCategories={closeCategories}
-              category={handleCategory}
-            />
-          )}
+          {categories && <SelectCategory closeCategories={closeCategories} />}
         </li>
         <li className="nav-item">
           <NavLink
@@ -129,10 +136,9 @@ function Navbar() {
           onMouseLeave={onMouseLeave}
         >
           <NavLink
-            className="nav-link"
-            activeClassName="selected fc"
-            to="/flashcards"
-            onClick={() => handleClick()}
+            className={selectFlashcards ? "nav-link fc" : "nav-link"}
+            to="/"
+            onClick={(e) => handlePath(e)}
             onMouseEnter={() => setHover(!hover)}
             onMouseLeave={() => setHover(!hover)}
           >
@@ -140,6 +146,9 @@ function Navbar() {
           </NavLink>
           {dropdown && <Dropdown />}
         </li>
+        {categories && (
+          <SelectCategory closeCategories={closeCategories} path={path} />
+        )}
         {sidebar()}
       </ul>
     </nav>
