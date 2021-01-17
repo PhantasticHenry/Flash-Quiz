@@ -39,7 +39,7 @@ class FlashcardsController < ApplicationController
   private
   
   def flashcard_params
-    params.require(:flashcard).permit(:category, :question, :correct_answer, :incorrect_answers)
+    params.require(:flashcard).permit(:category, :question, :correct_answer, incorrect_answers: [])
   end
 
   def set_flashcard 
