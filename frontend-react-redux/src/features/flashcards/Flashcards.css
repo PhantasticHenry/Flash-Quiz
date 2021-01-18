@@ -13,10 +13,16 @@
   z-index: -1;
 }
 
+/* .flashcards {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+} */
 .flashcards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  align-items: center;
   perspective: 1000px;
 }
 
@@ -27,7 +33,7 @@
   border-radius: 0.25rem;
   box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.5);
   background-color: #fff;
-  height: 200px;
+  /* height: 200px; */
   width: 200px;
   transition: 150ms;
   transform-style: preserve-3d;
