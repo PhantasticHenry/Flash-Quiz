@@ -18,6 +18,7 @@
   box-shadow: rgb(124, 124, 124) 5px 5px 29px 7px;
   border: 2px solid rgb(28, 110, 164);
   display: flex;
+  cursor: pointer;
 }
 .btn-category:hover {
   background: #1c6ea4;
