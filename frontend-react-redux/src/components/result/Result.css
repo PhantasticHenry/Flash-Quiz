@@ -1,5 +1,6 @@
 .result-container {
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  /* background: transparent; */
   opacity: 0.6;
   display: flexbox;
   font-size: 1.5rem;
@@ -78,8 +79,8 @@
 }
 
 .name input:focus,
-input:hover,
-button {
+.name input:hover,
+.name button {
   background-color: aqua;
   border: #fff;
   border-style: double;
