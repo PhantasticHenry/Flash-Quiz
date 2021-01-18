@@ -11,7 +11,7 @@ function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   const [hover, setHover] = useState(false);
   const [categories, setCategories] = useState(false);
-  const [category, setCategory] = useState(null);
+  // const [category, setCategory] = useState(null);
   const [selectQuiz, setSelectQuiz] = useState(false);
   const [selectFlashcards, setSelectFlashcards] = useState(false);
   const [path, setPath] = useState("");
@@ -38,9 +38,9 @@ function Navbar() {
     path === "Flashcards" && setSelectFlashcards(true);
   };
 
-  const toggleActive = (e) => {
-    console.log("targeting", e.target);
-  };
+  // const toggleActive = (e) => {
+  //   console.log("targeting", e.target);
+  // };
 
   const handleClick = () => {
     setSelectQuiz(false);
@@ -144,7 +144,18 @@ function Navbar() {
           >
             Flashcards
           </NavLink>
-          {dropdown && <Dropdown />}
+          {/* {dropdown && (
+            <Dropdown
+              handlePath={handlePath}
+            />
+          )} */}
+          {dropdown && (
+            <Dropdown
+              handlePath={handlePath}
+              closeCategories={closeCategories}
+              path={path}
+            />
+          )}
         </li>
         {categories && (
           <SelectCategory closeCategories={closeCategories} path={path} />
