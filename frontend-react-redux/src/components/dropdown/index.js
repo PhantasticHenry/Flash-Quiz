@@ -3,8 +3,14 @@ import { NavLink } from "react-router-dom";
 import { DropdownItems } from "../dropdownItems";
 import "./Dropdown.css";
 
-function Dropdown() {
+function Dropdown({ handlePath, selectCategory }) {
   const [clicked, setClicked] = useState(false);
+
+  const handleClick = (e) => {
+    setClicked(!clicked);
+    handlePath(e);
+    return selectCategory;
+  };
 
   return (
     <>
@@ -15,8 +21,8 @@ function Dropdown() {
               <NavLink
                 className={item.cName}
                 activeClassName="selected"
-                to={item.path}
-                onClick={() => setClicked(!clicked)}
+                to="/"
+                onClick={handleClick}
               >
                 {item.title}
               </NavLink>
