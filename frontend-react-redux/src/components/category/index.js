@@ -1,13 +1,9 @@
 import React from "react";
 import "./Category.css";
 
-function Category({ category, selectCategory }) {
+function Category({ category, handleClick }) {
   return (
-    <span
-      className="category"
-      name={category}
-      onClick={(e) => selectCategory(e)}
-    >
+    <span className="category" name={category} onClick={handleClick}>
       {category}
     </span>
   );
