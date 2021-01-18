@@ -4,7 +4,8 @@ import { Redirect } from "react-router-dom";
 import "./SelectCategory.css";
 import Category from "../category";
 
-function SelectCategory({ closeCategories, ...props }) {
+function SelectCategory({ closeCategories, path }) {
+  // function SelectCategory({ closeCategories, ...props }) {
   const [categorySelect, setCategorySelect] = useState(false);
   const [category, setCategory] = useState(undefined);
 
@@ -13,7 +14,21 @@ function SelectCategory({ closeCategories, ...props }) {
   );
 
   const uniqCat = [...new Set(categories)];
-  const path = props.path === "Flashcards" ? "/flashcards" : "/start-quiz";
+  // const path = props.path === "Flashcards" ? "/flashcards" : "/start-quiz";
+  console.log("path", path);
+
+  function renderSwitch(path) {
+    switch (path) {
+      case "Flashcards":
+        return "/flashcards";
+      case "Start Quiz":
+        return "/start-quiz";
+      case "Edit Flashcard":
+        return "/edit-flashcard";
+      default:
+        return console.log("error");
+    }
+  }
 
   const handleClick = (e) => {
     setCategorySelect(true);
@@ -24,13 +39,18 @@ function SelectCategory({ closeCategories, ...props }) {
     category !== undefined && closeCategories();
   }, [category, closeCategories]);
 
+  const cat = uniqCat.map((cat, i) => {
+    return <Category key={i} category={cat} handleClick={handleClick} />;
+  });
+
   return (
     <div className="select-category">
       <h3 className="select">Please Select a Category</h3>
-      <Category category={uniqCat} selectCategory={(e) => handleClick(e)} />
+      {cat}
       {categorySelect && (
         <Redirect
-          to={{ pathname: `${path}`, category: category }}
+          to={{ pathname: renderSwitch(path), category: category }}
+          // to={{ pathname: `${path}`, category: category }}
           onClick={(e) => handleClick(e)}
         />
       )}
