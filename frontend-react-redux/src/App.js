@@ -9,7 +9,7 @@ import HighScores from "./features/highscores";
 import Flashcards from "./features/flashcards";
 import { getFlashcards } from "./actions/flashcard/getFlashcards";
 import { getQuizzes } from "./actions/quiz/getQuizzes";
-import AddFlashcard from "./features/addFlashcard";
+import AddFlashcard from "./features/flashcards/addFlashcard";
 
 function App() {
   const dispatch = useDispatch();
