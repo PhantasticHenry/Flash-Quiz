@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import "./SelectCategory.css";
 import Category from "../category";
+import { renderSwitch } from "../dropdownItems";
 
 function SelectCategory({ closeCategories, path }) {
   // function SelectCategory({ closeCategories, ...props }) {
@@ -14,21 +15,6 @@ function SelectCategory({ closeCategories, path }) {
   );
 
   const uniqCat = [...new Set(categories)];
-  // const path = props.path === "Flashcards" ? "/flashcards" : "/start-quiz";
-  console.log("path", path);
-
-  function renderSwitch(path) {
-    switch (path) {
-      case "Flashcards":
-        return "/flashcards";
-      case "Start Quiz":
-        return "/start-quiz";
-      case "Edit Flashcard":
-        return "/edit-flashcard";
-      default:
-        return console.log("error");
-    }
-  }
 
   const handleClick = (e) => {
     setCategorySelect(true);
@@ -51,7 +37,7 @@ function SelectCategory({ closeCategories, path }) {
         <Redirect
           to={{ pathname: renderSwitch(path), category: category }}
           // to={{ pathname: `${path}`, category: category }}
-          onClick={(e) => handleClick(e)}
+          onClick={handleClick}
         />
       )}
     </div>
