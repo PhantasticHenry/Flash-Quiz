@@ -11,9 +11,8 @@ function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   const [hover, setHover] = useState(false);
   const [categories, setCategories] = useState(false);
-  // const [category, setCategory] = useState(null);
-  const [selectQuiz, setSelectQuiz] = useState(false);
-  const [selectFlashcards, setSelectFlashcards] = useState(false);
+  const [quizActive, setQuizActive] = useState(false);
+  const [flashcardsActive, setFlashcardsActive] = useState(false);
   const [path, setPath] = useState("");
 
   const onMouseEnter = () => {
@@ -34,28 +33,34 @@ function Navbar() {
 
   const closeCategories = () => {
     setCategories(false);
-    path === "Start Quiz" && setSelectQuiz(true);
-    path === "Flashcards" && setSelectFlashcards(true);
+    path === "Start Quiz" && setQuizActive(true);
+    path === "Flashcards" && setFlashcardsActive(true);
   };
 
-  // const toggleActive = (e) => {
-  //   console.log("targeting", e.target);
+  function handleClick() {
+    setQuizActive(false);
+    setFlashcardsActive(false);
+    setClicked(false); //toggle hamburger menu
+    setCategories(false); //closes category select div
+  }
+
+  // const handlePath = (e) => {
+  //   setPath(e.target.innerText);
+  //   path === "Add Flashcard"
+  //     ? setCategories(false)
+  //     : setCategories(!categories);
+  //   flashcardsActive &&
+  //     setFlashcardsActive(!setFlashcardsActive) &&
+  //     setQuizActive(false);
+  //   quizActive && setQuizActive(!quizActive) && setFlashcardsActive(false);
   // };
-
-  const handleClick = () => {
-    setSelectQuiz(false);
-    setSelectFlashcards(false);
-    setClicked(false);
-    setCategories(false);
-  };
-
   const handlePath = (e) => {
     setPath(e.target.innerText);
     setCategories(!categories);
-    selectFlashcards &&
-      setSelectFlashcards(!setSelectFlashcards) &&
-      setSelectQuiz(false);
-    selectQuiz && setSelectQuiz(!selectQuiz) && setSelectFlashcards(false);
+    flashcardsActive &&
+      setFlashcardsActive(!setFlashcardsActive) &&
+      setQuizActive(false);
+    quizActive && setQuizActive(!quizActive) && setFlashcardsActive(false);
   };
 
   const sidebar = () => {
@@ -94,7 +99,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <NavLink to="/" onClick={() => handleClick()}>
+      <NavLink to="/" onClick={handleClick}>
         <img className="navbar-logo" src={logo} alt="logo" />
       </NavLink>
       <div className="menu-icon">
@@ -113,7 +118,7 @@ function Navbar() {
         <li className="nav-item">
           <NavLink
             to="/"
-            className={selectQuiz ? "nav-link selected" : "nav-link"}
+            className={quizActive ? "nav-link selected" : "nav-link"}
             onClick={(e) => handlePath(e)}
           >
             Start Quiz
@@ -136,7 +141,7 @@ function Navbar() {
           onMouseLeave={onMouseLeave}
         >
           <NavLink
-            className={selectFlashcards ? "nav-link fc" : "nav-link"}
+            className={flashcardsActive ? "nav-link fc" : "nav-link"}
             to="/"
             onClick={(e) => handlePath(e)}
             onMouseEnter={() => setHover(!hover)}
@@ -144,11 +149,6 @@ function Navbar() {
           >
             Flashcards
           </NavLink>
-          {/* {dropdown && (
-            <Dropdown
-              handlePath={handlePath}
-            />
-          )} */}
           {dropdown && (
             <Dropdown
               handlePath={handlePath}
