@@ -4,7 +4,7 @@ export const flashcardReducer = (state = [], action) => {
       return action.payload;
 
     case "ADD_FLASHCARD":
-      return [...flashcards, action.payload];
+      return [...state, action.payload];
     default:
       return state;
   }
