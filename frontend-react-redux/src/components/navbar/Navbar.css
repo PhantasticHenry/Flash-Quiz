@@ -68,6 +68,12 @@
     0 0 30px #157aff, 0 0 40px #157aff, 0 0 55px #157aff, 0 0 75px #157aff;
 }
 
+.afc {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fffb00c7,
+    0 0 30px #fffb00c7, 0 0 40px #fffb00c7, 0 0 55px #fffb00c7,
+    0 0 75px #fffb00c7;
+}
+
 .menu-icon {
   display: none;
 }
