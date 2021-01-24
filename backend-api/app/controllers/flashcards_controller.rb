@@ -8,9 +8,10 @@ class FlashcardsController < ApplicationController
 
   def create 
     flashcard = Flashcard.new(flashcard_params)
-    if flashcard.save! 
+    a = flashcard.incorrect_answers.select { |ia| !ia.empty? }
+    if a.length == 3 && flashcard.save!
       render json: flashcard
-    else 
+    else
       render json: {error: "Something went wrong during creation"}
     end
   end
@@ -19,7 +20,7 @@ class FlashcardsController < ApplicationController
     @flashcard
   end
 
-  def update 
+  def update
     if @flashcard.update(flashcard_params)
       render json: @flashcard
     else 
