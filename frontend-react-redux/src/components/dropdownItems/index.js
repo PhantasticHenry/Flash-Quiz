@@ -15,3 +15,18 @@ export const DropdownItems = [
     cName: "dropdown-link",
   },
 ];
+
+export function renderSwitch(path) {
+  switch (path) {
+    case "Flashcards":
+      return "/flashcards";
+    case "Start Quiz":
+      return "/start-quiz";
+    case "Add Flashcard":
+      return "/add-flashcard";
+    case "Edit Flashcard":
+      return "/edit-flashcard";
+    default:
+      return "/";
+  }
+}
