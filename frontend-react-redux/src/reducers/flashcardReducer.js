@@ -5,6 +5,7 @@ export const flashcardReducer = (state = [], action) => {
 
     case "ADD_FLASHCARD":
       return [...state, action.payload];
+
     default:
       return state;
   }
