@@ -20,7 +20,7 @@ function Dropdown({ handlePath, selectCategory }) {
             <li key={index}>
               <NavLink
                 className={item.cName}
-                activeClassName="selected"
+                // activeClassName="active"
                 to="/"
                 onClick={handleClick}
               >
