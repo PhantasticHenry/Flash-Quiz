@@ -12,7 +12,7 @@ export const addFlashcard = (flashcard) => {
       .then((res) => res.json())
       .then((flashcard) => {
         flashcard.error
-          ? alert(flashcard.details)
+          ? alert(flashcard.error)
           : dispatch({ type: types.ADD_FLASHCARD, payload: flashcard });
       })
       .catch((err) => console.log("Error", err));
