@@ -10,6 +10,7 @@ import Flashcards from "./features/flashcards";
 import { getFlashcards } from "./actions/flashcard/getFlashcards";
 import { getQuizzes } from "./actions/quiz/getQuizzes";
 import AddFlashcard from "./features/flashcards/addFlashcard";
+import EditFlashcard from "./features/flashcards/editFlashcard";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,8 @@ function App() {
           <Route path="/high-scores" exact component={HighScores} />
           <Route path="/flashcards" exact component={Flashcards} />
           <Route path="/add-flashcard" exact component={AddFlashcard} />
+          <Route path="/edit-flashcard/" exact component={EditFlashcard} />
+          {/* <Route path="/edit-flashcard/:slug" exact component={EditFlashcard} /> */}
         </Switch>
       </Router>
     </div>
