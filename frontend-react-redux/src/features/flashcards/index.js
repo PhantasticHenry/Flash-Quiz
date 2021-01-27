@@ -5,12 +5,31 @@ import "./Flashcards.css";
 import Flashcard from "../../components/flashcard";
 
 function Flashcards(props) {
-  const [click, setClick] = useState(false);
+  const [allowEdit, setAllowEdit] = useState(false);
+  const [remove, setRemove] = useState(false);
+
   const flashcards = useSelector((state) => state.flashcards);
   const category = props.location.category;
   const flashcard = flashcards
     .filter((flashcard) => flashcard.category === category)
-    .map((flashcard) => <Flashcard flashcard={flashcard} key={flashcard.id} />);
+    .map((flashcard) => (
+      <Flashcard
+        flashcard={flashcard}
+        key={flashcard.id}
+        allowEdit={allowEdit}
+        allowRemove={remove}
+      />
+    ));
+
+  function handleEdit() {
+    setAllowEdit(!allowEdit);
+    setRemove(false);
+  }
+
+  function handleRemove() {
+    setRemove(!remove);
+    setAllowEdit(false);
+  }
 
   return (
     <div className="flashcards-container">
@@ -18,10 +37,12 @@ function Flashcards(props) {
         <NavLink className="flashcard-btn add" to="add-flashcard">
           Add Flashcard
         </NavLink>
-        <span className="flashcard-btn edit" onClick={() => setClick(!click)}>
+        <span className="flashcard-btn edit" onClick={() => handleEdit()}>
           Edit Flashcard
         </span>
-        <span className="flashcard-btn remove">Remove Flashcard</span>
+        <span className="flashcard-btn remove" onClick={() => handleRemove()}>
+          Remove Flashcard
+        </span>
       </div>
       <div className="flashcards">{flashcard}</div>
     </div>
