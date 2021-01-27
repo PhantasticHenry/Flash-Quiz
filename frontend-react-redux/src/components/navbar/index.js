@@ -8,62 +8,52 @@ import SelectCategory from "../selectCategory";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+  // const [dropdown, setDropdown] = useState(false);
   const [hover, setHover] = useState(false);
   const [categories, setCategories] = useState(false);
   const [quizActive, setQuizActive] = useState(false);
   const [flashcardsActive, setFlashcardsActive] = useState(false);
   const [path, setPath] = useState("");
 
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
+  // function onMouseEnter() {
+  //   if (window.innerWidth < 960) {
+  //     setDropdown(false);
+  //   } else {
+  //     setDropdown(true);
+  //   }
+  // }
 
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
+  // function onMouseLeave() {
+  //   if (window.innerWidth < 960) {
+  //     setDropdown(false);
+  //   } else {
+  //     setDropdown(false);
+  //   }
+  // }
 
-  const closeCategories = () => {
+  function closeCategories() {
     setCategories(false);
     path === "Start Quiz" && setQuizActive(true);
     path === "Flashcards" && setFlashcardsActive(true);
-  };
+  }
 
   function handleClick() {
     setQuizActive(false);
     setFlashcardsActive(false);
-    setClicked(false); //toggle hamburger menu
-    setCategories(false); //closes category select div
+    setClicked(false);
+    setCategories(false);
   }
 
-  // const handlePath = (e) => {
-  //   setPath(e.target.innerText);
-  //   path === "Add Flashcard"
-  //     ? setCategories(false)
-  //     : setCategories(!categories);
-  //   flashcardsActive &&
-  //     setFlashcardsActive(!setFlashcardsActive) &&
-  //     setQuizActive(false);
-  //   quizActive && setQuizActive(!quizActive) && setFlashcardsActive(false);
-  // };
-  const handlePath = (e) => {
+  function handlePath(e) {
     setPath(e.target.innerText);
     setCategories(!categories);
     flashcardsActive &&
       setFlashcardsActive(!setFlashcardsActive) &&
       setQuizActive(false);
     quizActive && setQuizActive(!quizActive) && setFlashcardsActive(false);
-  };
+  }
 
-  const sidebar = () => {
+  function sidebar() {
     return (
       <div className={!clicked ? "hide" : ""}>
         <li className="nav-item">
@@ -95,7 +85,7 @@ function Navbar() {
         </li>
       </div>
     );
-  };
+  }
 
   return (
     <nav className="navbar">
@@ -137,25 +127,18 @@ function Navbar() {
         </li>
         <li
           className="nav-item"
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+          // onMouseEnter={onMouseEnter}
+          // onMouseLeave={onMouseLeave}
         >
           <NavLink
             className={flashcardsActive ? "nav-link fc" : "nav-link"}
             to="/"
             onClick={(e) => handlePath(e)}
-            onMouseEnter={() => setHover(!hover)}
-            onMouseLeave={() => setHover(!hover)}
+            // onMouseEnter={() => setHover(!hover)}
+            // onMouseLeave={() => setHover(!hover)}
           >
             Flashcards
           </NavLink>
-          {dropdown && (
-            <Dropdown
-              handlePath={handlePath}
-              closeCategories={closeCategories}
-              path={path}
-            />
-          )}
         </li>
         {categories && (
           <SelectCategory closeCategories={closeCategories} path={path} />
