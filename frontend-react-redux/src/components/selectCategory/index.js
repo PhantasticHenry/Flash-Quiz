@@ -6,7 +6,6 @@ import Category from "../category";
 import { renderSwitch } from "../dropdownItems";
 
 function SelectCategory({ closeCategories, path }) {
-  // function SelectCategory({ closeCategories, ...props }) {
   const [categorySelect, setCategorySelect] = useState(false);
   const [category, setCategory] = useState(undefined);
 
@@ -36,7 +35,6 @@ function SelectCategory({ closeCategories, path }) {
       {categorySelect && (
         <Redirect
           to={{ pathname: renderSwitch(path), category: category }}
-          // to={{ pathname: `${path}`, category: category }}
           onClick={handleClick}
         />
       )}
