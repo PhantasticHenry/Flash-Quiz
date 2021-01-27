@@ -16,11 +16,11 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFlashcards());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getQuizzes());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
