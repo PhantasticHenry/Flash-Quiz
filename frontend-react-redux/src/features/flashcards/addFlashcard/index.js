@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addFlashcard } from "../../../actions/flashcard/addFlashcard";
 import "./AddFlashcard.css";
-import { renderSwitch } from "../../../components/dropdownItems";
+// import { renderSwitch } from "../../../components/dropdownItems";
 import { Redirect } from "react-router-dom";
 
-function AddFlashcard(props) {
+function AddFlashcard() {
   const dispatch = useDispatch();
   const [category, setCategory] = useState("reactjs");
   const [question, setQuestion] = useState("");
@@ -29,13 +29,21 @@ function AddFlashcard(props) {
     setSubmitted(true);
   };
 
-  const passing =
-    question !== "" &&
-    incorrectAnswers[0] !== "" &&
-    option2 !== "" &&
-    option3 !== "" &&
-    correctAnswer !== "" &&
-    true;
+  function checkParams() {
+    const passing =
+      question !== "" &&
+      incorrectAnswers[0] !== "" &&
+      option2 !== "" &&
+      option3 !== "" &&
+      correctAnswer !== "" &&
+      true;
+
+    return passing ? (
+      <input type="submit" value="Create Flashcard" />
+    ) : (
+      <span style={{ color: "red" }}>Please fill card back</span>
+    );
+  }
 
   return (
     <div className="add-flashcard-container">
@@ -86,7 +94,7 @@ function AddFlashcard(props) {
             >
               <textarea placeholder="Enter incorrect answer" />
             </label>
-            <p>Please fill front and back of card</p>
+            <p>Please fill card front</p>
             <button
               type="button"
               className="btn-back-of-card"
@@ -94,9 +102,10 @@ function AddFlashcard(props) {
             >
               Click to flip to back
             </button>
+            {checkParams()}
           </div>
           <div className="back">
-            <h4>Back</h4>
+            <h4>Card Back</h4>
             <label
               className="form-correct-answer"
               type="text"
@@ -112,11 +121,7 @@ function AddFlashcard(props) {
             >
               Click to flip to front
             </button>
-            {passing ? (
-              <input type="submit" value="Create Flashcard" />
-            ) : (
-              <span style={{ color: "red" }}>Please complete card</span>
-            )}
+            {checkParams()}
             {submitted && <Redirect to="/" />}
           </div>
         </form>
