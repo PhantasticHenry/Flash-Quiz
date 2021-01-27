@@ -2,7 +2,7 @@ import * as types from "../actionTypes";
 
 export const editFlashcard = (flashcard) => {
   return (dispatch) => {
-    fetch(types.api + `flashcard/${flashcard}`, {
+    fetch(types.api + `flashcards/${flashcard}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
