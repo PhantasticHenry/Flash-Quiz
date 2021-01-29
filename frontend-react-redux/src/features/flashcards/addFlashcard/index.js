@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addFlashcard } from "../../../actions/flashcard/addFlashcard";
 import "./AddFlashcard.css";
-// import { renderSwitch } from "../../../components/dropdownItems";
 import { Redirect } from "react-router-dom";
 
-function AddFlashcard() {
+function AddFlashcard(props) {
   const dispatch = useDispatch();
-  const [category, setCategory] = useState("reactjs");
+  const [category, setCategory] = useState(props.location.state);
   const [question, setQuestion] = useState("");
   const [correctAnswer, setCorrectAnswer] = useState("");
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);
@@ -54,11 +53,14 @@ function AddFlashcard() {
           <div className="front">
             <h4>Card Front</h4>
             <label type="select">
-              Pick a category:
+              Select a category:
               <select
-                value={category}
+                defaultValue={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
+                <option value={category} disabled>
+                  Category
+                </option>
                 <option value="Reactjs">ReactJS</option>
                 <option value="Redux">Redux</option>
                 <option value="Ruby">Ruby</option>
