@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import "../../features/flashcards/Flashcards.css";
 import { removeFlashcard } from "../../actions/flashcard/removeFlashcard";
+import RemoveFlashcard from "../../features/flashcards/removeFlashcard";
 
 function Flashcard({ flashcard, allowEdit, allowRemove }) {
   const dispatch = useDispatch();
@@ -52,23 +53,16 @@ function Flashcard({ flashcard, allowEdit, allowRemove }) {
     return (
       <div className="front checkbox-container">
         <div
-          className={`checkbox ${click ? "check" : ""}`}
+          className="flashcards checkbox"
           onClick={(e) => handleClick(e)}
         ></div>
       </div>
     );
   }
 
-  function handleRemove(e) {
-    dispatch(removeFlashcard(flashcard));
-    setRemoved(true);
-  }
-
   function renderRemove() {
     return (
-      <div className="remove-card" onClick={(e) => handleRemove(e)}>
-        CLICK CARD TO REMOVE
-      </div>
+      <div className="remove-card" onClick={() => setRemoved(!removed)}></div>
     );
   }
 
@@ -85,7 +79,14 @@ function Flashcard({ flashcard, allowEdit, allowRemove }) {
       )}
       {allowEdit && editSelect()}
       {allowRemove && renderRemove()}
-      {removed && <Redirect to="/" />}
+      {removed && (
+        <Redirect
+          to={{
+            pathname: `/flashcards/${flashcard.id}/remove-flashcard`,
+            state: { flashcard: flashcard },
+          }}
+        />
+      )}
       <div className="front" ref={cardFront}>
         {flashcard.question}
         <ul className="answers">{answers}</ul>
