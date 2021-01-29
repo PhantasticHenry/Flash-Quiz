@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import "../../features/flashcards/Flashcards.css";
-import { removeFlashcard } from "../../actions/flashcard/removeFlashcard";
-import RemoveFlashcard from "../../features/flashcards/removeFlashcard";
 
 function Flashcard({ flashcard, allowEdit, allowRemove }) {
-  const dispatch = useDispatch();
   const [flip, setFlip] = useState(false);
   const [height, setHeight] = useState("initial");
   const [click, setClick] = useState(false);
@@ -74,7 +70,10 @@ function Flashcard({ flashcard, allowEdit, allowRemove }) {
     >
       {click && (
         <Redirect
-          to={{ pathname: `/edit-flashcard`, state: { flashcard: flashcard } }}
+          to={{
+            pathname: `/flashcards/${flashcard.id}/edit-flashcard`,
+            state: { flashcard: flashcard },
+          }}
         />
       )}
       {allowEdit && editSelect()}
