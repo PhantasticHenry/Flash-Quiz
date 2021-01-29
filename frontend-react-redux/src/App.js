@@ -34,14 +34,16 @@ function App() {
           <Route path="/high-scores" exact component={HighScores} />
           <Route path="/flashcards" exact component={Flashcards} />
           <Route path="/add-flashcard" exact component={AddFlashcard} />
-          <Route path="/edit-flashcard" exact component={EditFlashcard} />
+          <Route
+            path="/flashcards/:slug/edit-flashcard"
+            exact
+            component={EditFlashcard}
+          />
           <Route
             path="/flashcards/:slug/remove-flashcard"
             exact
             component={RemoveFlashcard}
           />
-          {/* <Route path="/remove-flashcard" exact component={RemoveFlashcard} /> */}
-          {/* <Route path="/edit-flashcard/:slug" exact component={EditFlashcard} /> */}
         </Switch>
       </Router>
     </div>
