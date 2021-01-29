@@ -1,5 +1,6 @@
 .flashcards-container,
-.edit-container {
+.edit-container,
+.remove-container {
   background: #183c6b9b;
   background-size: cover;
   height: 100vh;
@@ -22,6 +23,15 @@
   text-align: center;
 }
 
+.remove-container {
+  background: #ff00009b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
 ::-webkit-input-placeholder {
   text-align: center;
   color: red;
@@ -31,6 +41,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   perspective: 1000px;
 }
 
@@ -65,7 +76,7 @@
 }
 
 .remove-card {
-  border: rgba(255, 127, 22, 0.602);
+  border: rgba(255, 30, 0, 0.602);
   border-style: solid;
   border-radius: 0.25rem;
   height: 20px;
@@ -73,30 +84,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: -25px;
+  left: 50%;
   cursor: grab;
 }
-/* .remove-card {
-  background: rgb(83, 4, 4);
-  color: rgb(255, 0, 0);
-  font-weight: bolder;
-  display: flex;
-  justify-content: center;
-} */
 
 .checkbox {
-  border: rgba(255, 127, 22, 0.602);
+  border: rgb(112, 199, 62);
   border-style: solid;
   border-radius: 0.25rem;
   height: 20px;
   width: 20px;
+  /* height: 100%;
+  width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: -25px;
+  left: 50%;
   cursor: grab;
 }
 
-.checkbox.check {
-  background-color: coral;
+.flashcards-container h1 {
+  color: #fff;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+    0 0 20px rgba(148, 29, 142, 0.8), 0 0 30px rgba(148, 29, 142, 0.8),
+    0 0 40px rgba(148, 29, 142, 0.8), 0 0 55px rgba(148, 29, 142, 0.8),
+    0 0 75px rgba(148, 29, 142, 0.8);
+}
+
+.checkbox:hover {
+  background-color: rgb(45, 143, 0);
+}
+
+.remove-card:hover {
+  background: rgb(136, 0, 0);
 }
 
 .flip {
@@ -147,6 +172,8 @@
   text-decoration: none !important;
   padding: 20px;
   border-radius: 15px;
+  height: auto;
+  width: auto;
   font-weight: normal;
   text-decoration: none;
   font-style: normal;
@@ -158,10 +185,39 @@
     rgb(35, 136, 203) 50%,
     rgb(20, 78, 117) 100%
   );
-
   border: 2px solid rgb(28, 110, 164);
   cursor: pointer;
   transform: translateY(var(--translate-y, 0));
+}
+
+.flashcard-btn.add {
+  background-image: linear-gradient(
+    to right,
+    rgb(164, 105, 28) 0%,
+    rgb(203, 130, 35) 50%,
+    rgb(117, 80, 20) 100%
+  );
+  border: 2px solid rgb(164, 101, 28);
+}
+
+.flashcard-btn.edit {
+  background-image: linear-gradient(
+    to right,
+    rgb(89, 164, 28) 0%,
+    rgb(88, 203, 35) 50%,
+    rgb(20, 117, 33) 100%
+  );
+  border: 2px solid rgb(48, 164, 28);
+}
+
+.flashcard-btn.remove {
+  background-image: linear-gradient(
+    to right,
+    rgb(164, 28, 28) 0%,
+    rgb(203, 35, 35) 50%,
+    rgb(117, 20, 20) 100%
+  );
+  border: 2px solid rgb(164, 28, 28);
 }
 
 .flashcard-btn.add:hover,
