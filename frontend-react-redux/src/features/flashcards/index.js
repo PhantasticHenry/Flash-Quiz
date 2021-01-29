@@ -7,7 +7,6 @@ import Flashcard from "../../components/flashcard";
 function Flashcards(props) {
   const [allowEdit, setAllowEdit] = useState(false);
   const [remove, setRemove] = useState(false);
-
   const flashcards = useSelector((state) => state.flashcards);
   const category = props.location.category;
   const flashcard = flashcards
@@ -43,9 +42,15 @@ function Flashcards(props) {
   return (
     <div className="flashcards-container">
       <div className="flashcard-btn">
-        <NavLink className="flashcard-btn add" to="add-flashcard">
+        <NavLink
+          className="flashcard-btn add"
+          to={{ pathname: "/add-flashcard", state: { category: category } }}
+        >
           Add Flashcard
         </NavLink>
+        {/* <NavLink className="flashcard-btn add" to="add-flashcard">
+          Add Flashcard
+        </NavLink> */}
         <span className="flashcard-btn edit" onClick={() => handleEdit()}>
           Edit Flashcard
         </span>
