@@ -31,6 +31,15 @@ function Flashcards(props) {
     setAllowEdit(false);
   }
 
+  function handleH1() {
+    if (allowEdit) {
+      return <h1>Select green box to edit</h1>;
+    }
+    if (remove) {
+      return <h1>Select a red box to remove</h1>;
+    }
+  }
+
   return (
     <div className="flashcards-container">
       <div className="flashcard-btn">
@@ -44,6 +53,8 @@ function Flashcards(props) {
           Remove Flashcard
         </span>
       </div>
+      {allowEdit && handleH1()}
+      {remove && handleH1()}
       <div className="flashcards">{flashcard}</div>
     </div>
   );
