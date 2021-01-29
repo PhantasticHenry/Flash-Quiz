@@ -118,7 +118,6 @@ function EditFlashcard(props) {
             >
               Click to flip to back
             </button>
-            {checkParams()}
           </div>
           <div className="back">
             <h4>Card Back</h4>
