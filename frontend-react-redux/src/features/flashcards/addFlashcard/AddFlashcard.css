@@ -16,11 +16,11 @@
   text-align: center;
 }
 
-.form {
+.form,
+.remove {
   display: flex;
   position: relative;
-  justify-content: flex-start;
-  border-style: solid;
+  justify-content: center;
   border-radius: 1rem;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.349);
   height: 400px;
@@ -61,19 +61,19 @@ textarea {
 }
 
 .form .front,
-.form .back {
+.form .back,
+.remove .back {
   position: absolute;
   padding: 1rem;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  /* display: flex;
-  align-items: center; */
+  /* display: flex; */
 }
 
 .form .front {
   position: absolute;
-  top: 10px;
-  left: 7%;
+  top: -20px;
+  left: 13%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,7 +93,64 @@ textarea {
 }
 
 .form .back textarea,
-.form button {
-  margin-top: 1em;
-  margin-bottom: 2em;
+.form button,
+.form input {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.remove .front,
+.remove .back {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.remove,
+.remove.flip {
+  cursor: pointer;
+}
+.remove .back {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.remove .correct-answer {
+  padding-top: 2rem;
+}
+
+.remove h2,
+.remove h4,
+.remove span {
+  padding-bottom: 0.5rem;
+}
+
+.remove h4 {
+  text-decoration: underline;
+}
+
+.remove span {
+  color: rgb(133, 133, 133);
+}
+
+.remove-container .remove-btn {
+  margin: 0.5em;
+  display: flex;
+  border-radius: 0.25rem;
+  background-color: rgb(25, 182, 25);
+  cursor: pointer;
+}
+
+.remove-container .remove-btn {
+  background-color: red;
+  display: flex;
+  justify-items: center;
+  align-self: flex-end;
+  backface-visibility: hidden;
+  cursor: grab;
 }
