@@ -41,7 +41,9 @@ function AddFlashcard() {
     return passing ? (
       <input type="submit" value="Create Flashcard" />
     ) : (
-      <span style={{ color: "red" }}>Please fill card back</span>
+      <span style={{ color: "red", fontWeight: "bolder" }}>
+        Please fill card back
+      </span>
     );
   }
 
