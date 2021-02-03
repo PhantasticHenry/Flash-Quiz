@@ -44,12 +44,6 @@ select {
   padding: 0.5rem;
 }
 
-/* .form input,
-textarea {
-  display: flex;
-  /* align-self: center; */
-/* }  */
-
 .flip {
   transform: rotateY(180deg);
 }
@@ -67,7 +61,6 @@ textarea {
   padding: 1rem;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  /* display: flex; */
 }
 
 .form .front {
