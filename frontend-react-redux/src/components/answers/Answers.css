@@ -1,6 +1,4 @@
 .answers {
-  /* border: green;
-  border-style: double; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -12,45 +10,52 @@
   left: 5.2%;
 }
 
-/* 2420 x 1724 */
-.option-1 {
-  /* border: pink;
-  border-style: double; */
+.option-1,
+.option-2,
+.option-3,
+.option-4 {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 29%;
-  width: 47.5%;
+  justify-content: center;
   position: relative;
-  margin-right: 5%;
-  margin-bottom: 8.5%;
+  border-radius: 1rem;
+  border: 10px solid #1c6ea4;
+  top: -11px;
+  height: 32%;
+  width: 44%;
+  font-size: 2rem;
+  overflow: scroll;
+}
+
+.option-1 {
+  border-color: rgb(0, 183, 255);
+  -webkit-box-shadow: 0px 0px 60px 10px rgb(0, 183, 255);
+  box-shadow: 0px 0px 60px 10px rgb(0, 183, 255);
 }
 
 .option-2 {
-  /* border: pink;
-  border-style: double; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 29%;
-  width: 47.5%;
+  border-color: rgb(32, 136, 0);
+  -webkit-box-shadow: 0px 0px 60px 10px rgb(32, 136, 0);
+  box-shadow: 0px 0px 60px 10px rgb(32, 136, 0);
 }
+
 .option-3 {
-  /* border: pink;
-  border-style: double; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 29%;
-  width: 47.5%;
-  margin-right: 5%;
+  border-color: rgb(255, 251, 0);
+  -webkit-box-shadow: 0px 0px 60px 10px rgb(255, 251, 0);
+  box-shadow: 0px 0px 60px 10px rgb(255, 251, 0);
 }
+
 .option-4 {
-  /* border: pink;
-  border-style: double; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 29%;
-  width: 47.5%;
+  border-color: rgb(255, 0, 0);
+  -webkit-box-shadow: 0px 0px 60px 10px rgb(255, 0, 0);
+  box-shadow: 0px 0px 60px 10px rgb(255, 0, 0);
+}
+
+@media screen and (max-width: 1600px) {
+  .option-1,
+  .option-2,
+  .option-3,
+  .option-4 {
+    font-size: 1.5rem;
+  }
 }
