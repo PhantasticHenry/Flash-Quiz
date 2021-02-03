@@ -5,13 +5,10 @@ import { NavLink, Redirect } from "react-router-dom";
 import { updateQuiz } from "../../actions/quiz/updateQuiz";
 import HighScores from "../../features/highscores";
 
-// try and dispatch to update currentQuiz with score
-
 function Result({ correct, incorrect, quizID, catgegory }) {
   const dispatch = useDispatch();
 
   const score = (correct % (correct + incorrect)) * 10;
-  // const quizID = currentQuiz.quiz.id;
 
   const [name, setName] = useState("");
   const [clicked, setClicked] = useState(false);
@@ -66,7 +63,6 @@ function Result({ correct, incorrect, quizID, catgegory }) {
           </button>
         )}
       </div>
-      <NavLink to="/">Try Again</NavLink>
     </div>
   );
 }
