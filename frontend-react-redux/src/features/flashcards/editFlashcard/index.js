@@ -39,21 +39,21 @@ function EditFlashcard(props) {
     setSubmitted(true);
   };
 
-  function checkParams() {
-    const passing =
-      updateQuestion !== "" &&
-      incorrectAnswers[0] !== "" &&
-      option2 !== "" &&
-      option3 !== "" &&
-      updateCorrectAnswer !== "" &&
-      true;
+  // function checkParams() {
+  //   const passing =
+  //     updateQuestion !== "" ||
+  //     (updateQuestion === question && incorrectAnswers[0] !== "") ||
+  //     (incorrectAnswers[0] === incorrect_answers[0] && option2 !== "") ||
+  //     (option2 === incorrect_answers[1] && option3 !== "") ||
+  //     (option3 === incorrect_answers[2] && updateCorrectAnswer !== "") ||
+  //     (updateCorrectAnswer === correct_answer && true);
 
-    return passing ? (
-      <input type="submit" value="Create Flashcard" />
-    ) : (
-      <span style={{ color: "red" }}>Fill to update card</span>
-    );
-  }
+  //   return passing ? (
+  //     <input type="submit" value="Create Flashcard" />
+  //   ) : (
+  //     <span style={{ color: "red" }}>Fill to update card</span>
+  //   );
+  // }
 
   return (
     <div className="edit-container">
@@ -138,7 +138,8 @@ function EditFlashcard(props) {
             >
               Click to flip to front
             </button>
-            {checkParams()}
+            {/* {checkParams()} */}
+            <input type="submit" value="Create Flashcard" />
             {submitted && <Redirect to="/" />}
           </div>
         </form>
