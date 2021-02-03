@@ -3,38 +3,20 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
-import Dropdown from "../dropdown";
 import SelectCategory from "../selectCategory";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
-  // const [dropdown, setDropdown] = useState(false);
-  const [hover, setHover] = useState(false);
   const [categories, setCategories] = useState(false);
   const [quizActive, setQuizActive] = useState(false);
   const [flashcardsActive, setFlashcardsActive] = useState(false);
   const [path, setPath] = useState("");
 
-  // function onMouseEnter() {
-  //   if (window.innerWidth < 960) {
-  //     setDropdown(false);
-  //   } else {
-  //     setDropdown(true);
-  //   }
-  // }
-
-  // function onMouseLeave() {
-  //   if (window.innerWidth < 960) {
-  //     setDropdown(false);
-  //   } else {
-  //     setDropdown(false);
-  //   }
-  // }
-
   function closeCategories() {
     setCategories(false);
     path === "Start Quiz" && setQuizActive(true);
     path === "Flashcards" && setFlashcardsActive(true);
+    setClicked(false);
   }
 
   function handleClick() {
@@ -63,24 +45,6 @@ function Navbar() {
             onClick={() => setClicked(false)}
           >
             Add Flashcard
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            className="nav-link"
-            to="/edit-flashcard"
-            onClick={() => setClicked(false)}
-          >
-            Edit Flashcard
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            className="nav-link"
-            to="/remove-flashcard"
-            onClick={() => setClicked(false)}
-          >
-            Remove Flashcard
           </NavLink>
         </li>
       </div>
@@ -113,7 +77,12 @@ function Navbar() {
           >
             Start Quiz
           </NavLink>
-          {categories && <SelectCategory closeCategories={closeCategories} />}
+          {categories && (
+            <SelectCategory
+              closeCategories={closeCategories}
+              active={categories}
+            />
+          )}
         </li>
         <li className="nav-item">
           <NavLink
@@ -125,17 +94,11 @@ function Navbar() {
             High Scores
           </NavLink>
         </li>
-        <li
-          className="nav-item"
-          // onMouseEnter={onMouseEnter}
-          // onMouseLeave={onMouseLeave}
-        >
+        <li className="nav-item">
           <NavLink
             className={flashcardsActive ? "nav-link fc" : "nav-link"}
             to="/"
             onClick={(e) => handlePath(e)}
-            // onMouseEnter={() => setHover(!hover)}
-            // onMouseLeave={() => setHover(!hover)}
           >
             Flashcards
           </NavLink>
