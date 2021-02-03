@@ -4,14 +4,12 @@
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -2;
   overflow: hidden;
-  width: 100vw;
 }
 
 @keyframes STAR-MOVE {
@@ -53,4 +51,10 @@
   -webkit-animation-duration: 100s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    background-image: url("../../images/home-280w.jpeg");
+  }
 }
