@@ -5,18 +5,15 @@ import Answers from "../../components/answers";
 import Question from "../../components/question";
 import Result from "../../components/result";
 import { startQuiz } from "../../actions/quiz/startQuiz";
-import { getQuizFlashcards } from "../../actions/getQuizFlashcards";
-import { getQuiz } from "../../actions/quiz/getQuiz";
 
 function Quiz(props) {
-  const category = props.location.category;
   const dispatch = useDispatch();
-
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const [quizID, setQuizID] = useState(0);
+  const [category] = useState(props.location.category);
 
   const quizzes = useSelector((state) => state.quizzes);
   const flashcards = useSelector((state) => state.flashcards);
