@@ -8,6 +8,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  font-size: 2rem;
   z-index: -1;
 }
 
@@ -19,13 +20,14 @@
   color: #fff;
   border: violet;
   border-style: solid;
-  border-radius: 2.5rem;
-  width: 55%;
-  height: 60%;
-  overflow: scroll;
+  border-radius: 1.5rem;
   position: absolute;
-  top: 21.5%;
-  left: 24.5%;
+  top: 50.5%;
+  left: 50.1%;
+  transform: translate(-50%, -50%);
+  height: 645px;
+  width: 902px;
+  overflow: scroll;
 }
 
 .table-scroll table {
