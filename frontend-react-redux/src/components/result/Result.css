@@ -1,33 +1,33 @@
 .result-container {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-  /* background: transparent; */
-  opacity: 0.6;
-  display: flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  top: 47%;
   font-size: 1.5rem;
 }
 
 .result {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   opacity: 0.6;
-  /* background: transparent; */
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  text-align: center;
   padding: 2rem 2rem;
   height: 25vh;
-  width: 50vw;
+  width: 65vw;
   position: absolute;
-  top: 36%;
+  top: -16%;
   left: 52%;
   border-radius: 1rem;
   transform: translate(-50%, -50%);
-  -webkit-box-shadow: 5px 5px 29px 7px #fff;
-  box-shadow: 5px 5px 29px 7px #fff;
+  font-size: 4rem;
 }
 
 .result-container a {
-  /* background: linear-gradient(90deg, rgb(104, 40, 40) 0%, rgb(26, 23, 23) 100%); */
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -47,28 +47,27 @@
 }
 
 .name {
-  /* background: linear-gradient(90deg, rgb(104, 40, 40) 0%, rgb(26, 23, 23) 100%); */
-
+  background: linear-gradient(90deg, rgb(104, 40, 40) 0%, rgb(26, 23, 23) 100%);
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-evenly;
   align-items: center;
-  /* flex-direction: row; */
-  height: 7vh;
-  width: 42vw;
-  position: absolute;
-  left: 5%;
-  top: 59%;
+  align-self: center;
+  height: 8vh;
+  width: 50vw;
   border-radius: 0.5rem;
+  position: absolute;
+  top: 0%;
+  margin-top: 1em;
+  font-size: 2rem;
 }
 
 .name input {
   background: transparent;
   font-size: 2rem;
   text-align: center;
-  color: black;
+  color: #fff;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   height: 60%;
   width: 50%;
   outline: none;
@@ -81,16 +80,18 @@
 .name input:focus,
 .name input:hover,
 .name button {
-  background-color: aqua;
-  border: #fff;
-  border-style: double;
+  background-color: rgba(255, 128, 128, 0.822);
+  border-style: solid;
   box-shadow: 5px 5px 29px 7px #fff;
   top: 4px;
   opacity: 1;
+  font-size: 2rem;
 }
 
 .name button {
   width: 10%;
   height: 75%;
   border-radius: 1.5rem;
+  transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out,
+    0.1s padding ease-in-out;
 }
