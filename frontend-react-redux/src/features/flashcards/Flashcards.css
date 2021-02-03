@@ -58,7 +58,6 @@
   cursor: pointer;
   margin-top: 2.5rem;
   transform: translateY(var(--translate-y, 0));
-  /* overflow: scroll; */
 }
 
 .flashcard:hover {
@@ -96,8 +95,6 @@
   border-radius: 0.25rem;
   height: 20px;
   width: 20px;
-  /* height: 100%;
-  width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,6 +146,13 @@
   text-decoration: none;
   margin-top: 0.5rem;
   left: 0;
+}
+
+.answers.quiz {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 1rem;
 }
 
 .answer {
