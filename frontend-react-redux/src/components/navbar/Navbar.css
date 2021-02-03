@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .hide {
@@ -12,14 +12,13 @@
 }
 
 .navbar-logo {
-  width: 5vw;
-  height: 7vh;
+  width: 4vw;
+  height: 4vh;
   color: #fff;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
 }
 
 .nav-item {
