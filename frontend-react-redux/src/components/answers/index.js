@@ -13,7 +13,7 @@ function Answers({ answers, handleClick }) {
     </li>
   ));
 
-  return <div className="answers">{options}</div>;
+  return <div className="answers quiz">{options}</div>;
 }
 
 export default Answers;
