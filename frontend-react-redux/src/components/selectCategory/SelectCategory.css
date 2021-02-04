@@ -30,6 +30,10 @@
   flex-direction: row;
 }
 
+.select-category.hide {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .select-category {
     height: 38vh;
