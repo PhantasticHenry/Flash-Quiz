@@ -20,7 +20,6 @@ class QuizzesController < ApplicationController
   end
 
   def show 
-    # @quiz = Quiz.find_by(id: params[:id])
     @quiz_flashcards = QuizFlashcard.select { |qfc| qfc.quiz.id === @quiz.id}
     render json: {quiz: @quiz, quiz_flashcards: @quiz_flashcards}
   end
