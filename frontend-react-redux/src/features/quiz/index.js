@@ -6,14 +6,13 @@ import Question from "../../components/question";
 import Result from "../../components/result";
 import { startQuiz } from "../../actions/quiz/startQuiz";
 
-function Quiz(props) {
+function Quiz() {
   const dispatch = useDispatch();
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
-  const [quizID, setQuizID] = useState(0);
-  const [category] = useState(props.location.category);
+  const category = useSelector((state) => state.category);
 
   const quizzes = useSelector((state) => state.quizzes);
   const flashcards = useSelector((state) => state.flashcards);
@@ -51,7 +50,6 @@ function Quiz(props) {
   const handleClick = (e) => {
     if (index >= 10) {
       setGameFinished(true);
-      setQuizID(currentQuiz.quiz.id);
     } else {
       checkAnswer(e.currentTarget.getAttribute("name"));
       nextQuestion();
@@ -65,7 +63,7 @@ function Quiz(props) {
           <Result
             correct={correct}
             incorrect={incorrect}
-            quizID={quizID}
+            quizID={currentQuiz.id}
             category={category}
           />
         </>
