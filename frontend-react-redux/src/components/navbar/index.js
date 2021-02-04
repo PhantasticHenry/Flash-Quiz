@@ -12,8 +12,7 @@ function Navbar() {
   const [flashcardsActive, setFlashcardsActive] = useState(false);
   const [path, setPath] = useState("");
 
-  function closeCategories() {
-    setCategories(false);
+  function handleActive() {
     path === "Start Quiz" && setQuizActive(true);
     path === "Flashcards" && setFlashcardsActive(true);
     setClicked(false);
@@ -77,12 +76,6 @@ function Navbar() {
           >
             Start Quiz
           </NavLink>
-          {categories && (
-            <SelectCategory
-              closeCategories={closeCategories}
-              active={categories}
-            />
-          )}
         </li>
         <li className="nav-item">
           <NavLink
@@ -104,7 +97,7 @@ function Navbar() {
           </NavLink>
         </li>
         {categories && (
-          <SelectCategory closeCategories={closeCategories} path={path} />
+          <SelectCategory handleActive={handleActive} path={path} />
         )}
         {sidebar()}
       </ul>
