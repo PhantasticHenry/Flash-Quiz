@@ -11,4 +11,6 @@ export const UPDATE_QUIZ = "UPDATE_QUIZ";
 
 export const FETCH_QUIZ_FLASHCARDS = "FETCH_QUIZ_FLASHCARDS";
 
+export const SET_CATEGORY = "SET_CATEGORY";
+
 export const api = "http://localhost:3000/";
