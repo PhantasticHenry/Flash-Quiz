@@ -35,3 +35,26 @@ f15 = Flashcard.create(category: "Reactjs", question: "Everything in react is?",
 f16 = Flashcard.create(category: "Reactjs", question: "What will happen if you render an input element with disabled = {false}", correct_answer: "It will be rendered as enabled", incorrect_answers: ["It will be rendered as disabled", "It will not be rendered at all", "It will throw an error"])
 
 f17 = Flashcard.create(category: "Reactjs", question: "React component can return how many components?", correct_answer: "Multiple", incorrect_answers: ["One", "Two", "Three"])
+
+# Funny Random
+
+fr1 = Flashcard.create(category: "Funny", question: "What is the color of aircraft black boxes?", correct_answer: "Bright orange color", incorrect_answers: ["Bright red color", "Bright yellow color", "None of the above"])
+fr2 = Flashcard.create(category: "Funny", question: "Do goldfish really have a memory of 3 seconds?", correct_answer: "No", incorrect_answers: ["Yes", "Sometimes", "None of the above"])
+fr3 = Flashcard.create(category: "Funny", question: "In which place it is illegal to catch mice?", correct_answer: "Ohio", incorrect_answers: ["Hawaii", "Alaska", "Texas"])
+fr4 = Flashcard.create(category: "Funny", question: "A group of ravens is known as?", correct_answer: "Unkindness", incorrect_answers: ["Brood", "Mischief", "Drift"])
+fr5 = Flashcard.create(category: "Funny", question: "What kind of animal is known as jackrabbit?", correct_answer: "Hare", incorrect_answers: ["Rabbit", "Pika", "Patagonian Mara"])
+fr6 = Flashcard.create(category: "Funny", question: "Which is the main ingredient used in the Bombay duck?", correct_answer: "Fish", incorrect_answers: ["Duck", "Milk", "Honey"])
+fr7 = Flashcard.create(category: "Funny", question: "A group of crows is known as?", correct_answer: "Murderer", incorrect_answers: ["Blessing", "Army", "Flink"])
+fr8 = Flashcard.create(category: "Funny", question: "A group of unicorns is called", correct_answer: "Blessing", incorrect_answers: ["Murderer", "Colony", "Pack"])
+fr9 = Flashcard.create(category: "Funny", question: "How many years old is the oldest piece of chewing gum?", correct_answer: "9000 years", incorrect_answers: ["2000 years", "10 years", "5700 years"])
+fr10 = Flashcard.create(category: "Funny", question: "What is a kind of animal which is known as a prairie dog?", correct_answer: "Rodent", incorrect_answers: ["Dog", "Bird", "Cat"])
+fr11 = Flashcard.create(category: "Funny", question: "Which is the country where fortune cookies were discovered?", correct_answer: "America", incorrect_answers: ["China", "Vietnam", "Wakanda"])
+fr12 = Flashcard.create(category: "Funny", question: "On Sunday what is once illegal to sell in Columbus Ohio?", correct_answer: "Corn flakes", incorrect_answers: ["Vehicle", "Rice", "House"])
+fr13 = Flashcard.create(category: "Funny", question: "What is the name of fear of being buried alive?", correct_answer: "Technophobia", incorrect_answers: ["Cynophobia", "Acrophobia", "Trypophobia"])
+fr14 = Flashcard.create(category: "Funny", question: "For whom it is illegal to frown at in a new jersey?", correct_answer: "Police officer", incorrect_answers: ["Docter", "Baby", "Adult"])
+fr15 = Flashcard.create(category: "Funny", question: "Where is it illegal to sell ice cream after 6pm, unless the customer has a note from his doctor?", correct_answer: "New Jersey", incorrect_answers: ["Seattle", "Spain", "New York"])
+fr16 = Flashcard.create(category: "Funny", question: "The month in which Russian’s celebrates October revolution?", correct_answer: "November", incorrect_answers: ["October", "September", "January"])
+fr17 = Flashcard.create(category: "Funny", question: "Group of frogs is known as?", correct_answer: "Army", incorrect_answers: ["Blessing", "Flock", "Horde"])
+fr18 = Flashcard.create(category: "Funny", question: "The animal that causes the most human deaths every year?", correct_answer: "Deer", incorrect_answers: ["Dog", "Cow", "Donkey"])
+fr19 = Flashcard.create(category: "Funny", question: "What is the color of blueberry jam?", correct_answer: "Purple", incorrect_answers: ["Blue", "Green", "Pink"])
+fr20 = Flashcard.create(category: "Funny", question: "What is the size of kangaroo babies when they are born?", correct_answer: "1 inch", incorrect_answers: ["1 feet", "1 yard", "1 meter"])
