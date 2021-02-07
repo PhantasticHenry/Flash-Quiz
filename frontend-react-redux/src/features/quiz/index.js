@@ -48,7 +48,7 @@ function Quiz() {
   };
 
   const handleClick = (e) => {
-    if (index >= 10) {
+    if (index === currentQuiz.quiz_flashcards.length - 1) {
       setGameFinished(true);
     } else {
       checkAnswer(e.currentTarget.getAttribute("name"));
