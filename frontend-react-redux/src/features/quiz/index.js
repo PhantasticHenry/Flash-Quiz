@@ -63,7 +63,7 @@ function Quiz() {
           <Result
             correct={correct}
             incorrect={incorrect}
-            quizID={currentQuiz.id}
+            quizID={currentQuiz.quiz.id}
             category={category}
           />
         </>
