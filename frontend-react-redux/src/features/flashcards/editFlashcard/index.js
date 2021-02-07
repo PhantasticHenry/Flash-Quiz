@@ -39,22 +39,6 @@ function EditFlashcard(props) {
     setSubmitted(true);
   };
 
-  // function checkParams() {
-  //   const passing =
-  //     updateQuestion !== "" ||
-  //     (updateQuestion === question && incorrectAnswers[0] !== "") ||
-  //     (incorrectAnswers[0] === incorrect_answers[0] && option2 !== "") ||
-  //     (option2 === incorrect_answers[1] && option3 !== "") ||
-  //     (option3 === incorrect_answers[2] && updateCorrectAnswer !== "") ||
-  //     (updateCorrectAnswer === correct_answer && true);
-
-  //   return passing ? (
-  //     <input type="submit" value="Create Flashcard" />
-  //   ) : (
-  //     <span style={{ color: "red" }}>Fill to update card</span>
-  //   );
-  // }
-
   return (
     <div className="edit-container">
       <div className={`form ${click ? "flip" : ""}`}>
