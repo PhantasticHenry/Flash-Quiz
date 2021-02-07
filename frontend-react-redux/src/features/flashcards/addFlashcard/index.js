@@ -62,6 +62,7 @@ function AddFlashcard(props) {
                   Category
                 </option>
                 <option value="Reactjs">ReactJS</option>
+                <option value="Funny">Funny Random</option>
                 <option value="Redux">Redux</option>
                 <option value="Ruby">Ruby</option>
                 <option value="Math">Math</option>
