@@ -18,12 +18,7 @@ function Dropdown({ handlePath, selectCategory }) {
         {DropdownItems.map((item, index) => {
           return (
             <li key={index}>
-              <NavLink
-                className={item.cName}
-                // activeClassName="active"
-                to="/"
-                onClick={handleClick}
-              >
+              <NavLink className={item.cName} to="/" onClick={handleClick}>
                 {item.title}
               </NavLink>
             </li>
