@@ -25,6 +25,7 @@
   width: 44%;
   font-size: 2rem;
   overflow: scroll;
+  cursor: pointer;
 }
 
 .option-1 {
