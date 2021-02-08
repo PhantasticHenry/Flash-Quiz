@@ -13,7 +13,11 @@ function Answers({ answers, handleClick }) {
     </li>
   ));
 
-  return <div className="answers quiz">{options}</div>;
+  return (
+    <div className="answers quiz">
+      {options.sort(() => Math.random() - 0.5)}
+    </div>
+  );
 }
 
 export default Answers;
