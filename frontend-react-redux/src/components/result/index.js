@@ -6,7 +6,6 @@ import { updateQuiz } from "../../actions/quiz/updateQuiz";
 
 function Result({ correct, incorrect, quizID, catgegory }) {
   const dispatch = useDispatch();
-  const score = (correct % (correct + incorrect)) * 10;
   const [name, setName] = useState("");
   const [clicked, setClicked] = useState(false);
 
