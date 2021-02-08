@@ -14,6 +14,7 @@ function SelectCategory({ handleActive, path }) {
   const categories = useSelector((state) => state.flashcards).map(
     (f) => f.category
   );
+  const quizzes = useSelector((state) => state.quizzes);
 
   const uniqCat = [...new Set(categories)];
 
@@ -38,7 +39,10 @@ function SelectCategory({ handleActive, path }) {
       {cat}
       {categorySelect && (
         <Redirect
-          to={{ pathname: renderSwitch(path), category: category }}
+          to={{
+            pathname: renderSwitch(path, quizzes.length),
+            category: category,
+          }}
           onClick={handleClick}
         />
       )}
