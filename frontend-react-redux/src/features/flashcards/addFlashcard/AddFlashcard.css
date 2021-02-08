@@ -36,6 +36,10 @@ select {
   cursor: pointer;
 }
 
+.form select {
+  font-size: 1rem;
+}
+
 ::-webkit-input-placeholder {
   text-align: center;
 }
