@@ -16,12 +16,12 @@ export const DropdownItems = [
   },
 ];
 
-export function renderSwitch(path) {
+export function renderSwitch(path, id) {
   switch (path) {
     case "Flashcards":
       return "/flashcards";
     case "Start Quiz":
-      return "/start-quiz";
+      return `/quizzes/${id}`;
     case "Add Flashcard":
       return "/add-flashcard";
     case "Edit Flashcard":
