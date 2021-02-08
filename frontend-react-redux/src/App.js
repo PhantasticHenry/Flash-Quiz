@@ -30,7 +30,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/start-quiz" exact component={Quiz} />
+          <Route path="/quizzes/:slug" exact component={Quiz} />
           <Route path="/high-scores" exact component={HighScores} />
           <Route path="/flashcards" exact component={Flashcards} />
           <Route path="/add-flashcard" exact component={AddFlashcard} />
