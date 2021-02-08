@@ -2,7 +2,17 @@ import React from "react";
 import "./Answers.css";
 
 function Answers({ answers, handleClick }) {
-  const options = answers.map((answer, i) => (
+  function shuffleArray(answers) {
+    let n = answers.length - 1;
+    for (; n > 0; n--) {
+      const j = Math.floor(Math.random() * (n + 1));
+      const temp = answers[n];
+      answers[n] = answers[j];
+      answers[j] = temp;
+    }
+    return answers;
+  }
+  const options = shuffleArray(answers).map((answer, i) => (
     <li
       onClick={handleClick}
       key={i}
