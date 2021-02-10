@@ -5,6 +5,7 @@ import Answers from "../../components/answers";
 import Question from "../../components/question";
 import Result from "../../components/result";
 import { startQuiz } from "../../actions/quiz/startQuiz";
+import Spinner from "../../components/spinner";
 
 function Quiz() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function Quiz() {
   const [incorrect, setIncorrect] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const category = useSelector((state) => state.category);
+  const [loading, setLoading] = useState(true);
 
   const quizzes = useSelector((state) => state.quizzes);
   const flashcards = useSelector((state) => state.flashcards);
@@ -32,8 +34,9 @@ function Quiz() {
       high_score: 0,
       category: category,
     };
-    dispatch(startQuiz(newQuiz));
-  }, [category]);
+    // dispatch(startQuiz(newQuiz));
+    dispatch(startQuiz(newQuiz)).then(setLoading(false));
+  }, [category, loading]);
 
   const nextQuestion = () => {
     setIndex(index + 1);
@@ -58,7 +61,9 @@ function Quiz() {
 
   return (
     <div className="quiz-container">
-      {gameFinished ? (
+      {loading ? (
+        <Spinner loading={loading} />
+      ) : gameFinished ? (
         <>
           <Result
             correct={correct}
@@ -73,6 +78,21 @@ function Quiz() {
           <Answers answers={answers} handleClick={handleClick} />
         </>
       )}
+      {/* {gameFinished ? (
+        <>
+          <Result
+            correct={correct}
+            incorrect={incorrect}
+            quizID={currentQuiz.quiz.id}
+            category={category}
+          />
+        </>
+      ) : (
+        <>
+          <Question question={question} />
+          <Answers answers={answers} handleClick={handleClick} />
+        </>
+      )} */}
     </div>
   );
 }
