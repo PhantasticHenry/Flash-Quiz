@@ -59,13 +59,24 @@
   top: 0%;
   margin-top: 1em;
   font-size: 2rem;
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .name input {
   background: transparent;
   font-size: 2rem;
   text-align: center;
-  color: #fff;
   border: none;
   border-radius: 0.5rem;
   height: 60%;
@@ -77,10 +88,23 @@
   -webkit-appearance: none;
 }
 
+.name button {
+  width: 10%;
+  height: 75%;
+  border-radius: 1rem;
+  transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out,
+    0.1s padding ease-in-out;
+  cursor: pointer;
+  border-style: solid;
+  top: 4px;
+  opacity: 1;
+  font-size: 2rem;
+}
+
 .name input:focus,
 .name input:hover,
-.name button {
-  background-color: rgba(255, 128, 128, 0.822);
+.name button:hover {
+  border: transparent;
   border-style: solid;
   box-shadow: 5px 5px 29px 7px #fff;
   top: 4px;
@@ -88,11 +112,20 @@
   font-size: 2rem;
 }
 
-.name button {
-  width: 10%;
-  height: 75%;
-  border-radius: 1.5rem;
-  transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out,
-    0.1s padding ease-in-out;
-  cursor: pointer;
+.name,
+.name input,
+.name button,
+.result {
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
