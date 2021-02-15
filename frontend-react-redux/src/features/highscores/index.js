@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import "./HighScores.css";
 import "../home/Home.css";
@@ -6,7 +6,7 @@ import "../home/Home.css";
 function HighScores() {
   const quizzes = useSelector((state) => state.quizzes);
   const sortedQuizzes = quizzes.sort((a, b) => b.high_score - a.high_score);
-  const top25 = sortedQuizzes.slice(0, 100);
+  const top25 = sortedQuizzes.slice(0, 25);
 
   const renderPlayers = top25.map((quiz, i) => (
     <tr key={i}>
