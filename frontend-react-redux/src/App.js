@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Quiz from "./features/quiz";
@@ -14,17 +15,20 @@ import EditFlashcard from "./features/flashcards/editFlashcard";
 import RemoveFlashcard from "./features/flashcards/removeFlashcard";
 
 function App() {
+  const quizzes = useSelector((state) => state.quizzes);
+  const flashcards = useSelector((state) => state.flashcards);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFlashcards());
-  }, [dispatch]);
+  }, [flashcards.length]);
 
   useEffect(() => {
     dispatch(getQuizzes());
-  }, [dispatch]);
+  }, [quizzes.length]);
 
   return (
     <div className="App">
+      <Home />
       <Router>
         <Navbar />
         <Switch>
