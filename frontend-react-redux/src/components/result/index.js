@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./Result.css";
-import { Redirect } from "react-router-dom";
-import { updateQuiz } from "../../actions/quiz/updateQuiz";
+import { startQuiz } from "../../actions/quiz/startQuiz";
 
-function Result({ correct, incorrect, quizID, catgegory }) {
+function Result({ correct, incorrect, category }) {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [clicked, setClicked] = useState(false);
 
-  const handleResult = () => {
-    return (
-      <div className="result">
+  const renderResults = () => {
+    return !clicked ? (
+      <div className={clicked ? "hide" : "result"}>
         {correct === correct + incorrect
           ? "Amazing!  You answered perfectly. 100%"
           : `Excellent! You answered ${correct} out of ${correct + incorrect}.`}
+      </div>
+    ) : (
+      <div className={clicked ? "result" : "hide"}>
+        Thank you for quizzing! Check out High Scores and see if you are top 25
+        or try out flipping flashcards.
       </div>
     );
   };
@@ -25,22 +29,21 @@ function Result({ correct, incorrect, quizID, catgegory }) {
 
   const quiz = {
     player: name,
-    id: quizID,
     high_score: correct,
-    catgegory: catgegory,
+    category: category,
   };
 
   const handleClick = (e) => {
     e.preventDefault();
-    dispatch(updateQuiz(quizID, quiz));
-    setName("");
+    dispatch(startQuiz(quiz));
     setClicked(!clicked);
+    setName("");
   };
 
   return (
     <div className="result-container">
-      {!clicked ? handleResult() : <Redirect to="/high-scores" />}
-      <div className="name">
+      {renderResults()}
+      <div className={clicked ? "hide" : "name"}>
         <label>Please enter name: </label>
         <span>&nbsp;&nbsp;</span>
         <input
