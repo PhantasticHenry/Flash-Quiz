@@ -1,42 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./Quiz.css";
 import Answers from "../../components/answers";
 import Question from "../../components/question";
 import Result from "../../components/result";
-import { startQuiz } from "../../actions/quiz/startQuiz";
-import Spinner from "../../components/spinner";
 
 function Quiz() {
-  const dispatch = useDispatch();
+  const category = useSelector((state) => state.category);
+  const flashcards = useSelector((state) => state.flashcards);
+
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
-  const category = useSelector((state) => state.category);
-  const [loading, setLoading] = useState(true);
 
-  const quizzes = useSelector((state) => state.quizzes);
-  const flashcards = useSelector((state) => state.flashcards);
   const questions = flashcards
     .filter((flashcard) => flashcard.category === category)
     .sort(() => Math.random() - 0.5);
-  const currentQuiz = quizzes[quizzes.length - 1];
 
   let question = questions[index].question;
   let correct_answer = questions[index].correct_answer;
   let incorrect_answers = questions[index].incorrect_answers;
   let answers = [...incorrect_answers, correct_answer];
-
-  useEffect(() => {
-    const newQuiz = {
-      player: "",
-      high_score: 0,
-      category: category,
-    };
-    // dispatch(startQuiz(newQuiz));
-    dispatch(startQuiz(newQuiz)).then(setLoading(false));
-  }, [category, loading]);
 
   const nextQuestion = () => {
     setIndex(index + 1);
@@ -51,7 +36,7 @@ function Quiz() {
   };
 
   const handleClick = (e) => {
-    if (index === currentQuiz.quiz_flashcards.length - 1) {
+    if (index === questions.length - 1) {
       setGameFinished(true);
     } else {
       checkAnswer(e.currentTarget.getAttribute("name"));
@@ -61,16 +46,9 @@ function Quiz() {
 
   return (
     <div className="quiz-container">
-      {loading ? (
-        <Spinner loading={loading} />
-      ) : gameFinished ? (
+      {gameFinished ? (
         <>
-          <Result
-            correct={correct}
-            incorrect={incorrect}
-            quizID={currentQuiz.quiz.id}
-            category={category}
-          />
+          <Result correct={correct} incorrect={incorrect} category={category} />
         </>
       ) : (
         <>
@@ -78,21 +56,6 @@ function Quiz() {
           <Answers answers={answers} handleClick={handleClick} />
         </>
       )}
-      {/* {gameFinished ? (
-        <>
-          <Result
-            correct={correct}
-            incorrect={incorrect}
-            quizID={currentQuiz.quiz.id}
-            category={category}
-          />
-        </>
-      ) : (
-        <>
-          <Question question={question} />
-          <Answers answers={answers} handleClick={handleClick} />
-        </>
-      )} */}
     </div>
   );
 }
