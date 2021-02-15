@@ -6,7 +6,7 @@ export const quizReducer = (state = [], action) => {
     case "FETCH_QUIZ":
       return action.payload;
 
-    case "START_QUIZ":
+    case "ADD_QUIZ":
       return [...state, action.payload];
 
     case "UPDATE_QUIZ":

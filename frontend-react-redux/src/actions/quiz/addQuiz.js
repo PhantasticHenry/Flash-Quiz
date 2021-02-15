@@ -1,6 +1,6 @@
 import * as types from "../actionTypes";
 
-export const startQuiz = (quiz) => {
+export const addQuiz = (quiz) => {
   return (dispatch) => {
     return fetch(types.api + "quizzes", {
       method: "POST",
@@ -17,7 +17,7 @@ export const startQuiz = (quiz) => {
       .then((quiz) => {
         quiz.error
           ? alert(quiz.details)
-          : dispatch({ type: types.START_QUIZ, payload: quiz });
+          : dispatch({ type: types.ADD_QUIZ, payload: quiz });
       })
       .catch((err) => console.log("ERROR: ", err));
   };

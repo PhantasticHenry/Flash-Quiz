@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./Result.css";
-import { startQuiz } from "../../actions/quiz/startQuiz";
+import { addQuiz } from "../../actions/quiz/addQuiz";
 
 function Result({ correct, incorrect, category }) {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ function Result({ correct, incorrect, category }) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    dispatch(startQuiz(quiz));
+    dispatch(addQuiz(quiz));
     setClicked(!clicked);
     setName("");
   };
