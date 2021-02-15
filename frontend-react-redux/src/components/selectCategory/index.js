@@ -40,7 +40,7 @@ function SelectCategory({ handleActive, path }) {
       {categorySelect && (
         <Redirect
           to={{
-            pathname: renderSwitch(path, quizzes.length),
+            pathname: renderSwitch(path, quizzes.length + 1),
             category: category,
           }}
           onClick={handleClick}
