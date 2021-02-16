@@ -15,7 +15,9 @@ function Navbar() {
   function handleActive() {
     path === "Start Quiz" && setQuizActive(true);
     path === "Flashcards" && setFlashcardsActive(true);
-    setClicked(false);
+    path === "High Scores" &&
+      setFlashcardsActive(false) &&
+      setQuizActive(false);
   }
 
   function handleClick() {
@@ -97,7 +99,11 @@ function Navbar() {
           </NavLink>
         </li>
         {categories && (
-          <SelectCategory handleActive={handleActive} path={path} />
+          <SelectCategory
+            handleActive={handleActive}
+            path={path}
+            closeDiv={() => setClicked(false)}
+          />
         )}
         {sidebar()}
       </ul>
