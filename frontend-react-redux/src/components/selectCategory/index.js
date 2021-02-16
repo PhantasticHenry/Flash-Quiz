@@ -7,7 +7,7 @@ import Category from "../category";
 import { renderSwitch } from "../dropdownItems";
 import { setCategory } from "../../actions/category/setCategory";
 
-function SelectCategory({ handleActive, path }) {
+function SelectCategory({ handleActive, path, closeDiv }) {
   const dispatch = useDispatch();
   const [categorySelect, setCategorySelect] = useState(false);
 
@@ -21,6 +21,7 @@ function SelectCategory({ handleActive, path }) {
   const handleClick = (e) => {
     setCategorySelect(true);
     dispatch(setCategory(e.target.getAttribute("name")));
+    closeDiv();
   };
 
   const category = useSelector((state) => state.category);
