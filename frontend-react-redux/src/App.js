@@ -1,8 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { getFlashcards } from "./actions/flashcard/getFlashcards";
 import { getQuizzes } from "./actions/quiz/getQuizzes";
 import Quiz from "./features/quiz";
