@@ -1,9 +1,9 @@
 import React from "react";
 import "./Answers.css";
-import { useShuffleArray } from "../../hooks/useShuffleArray";
+import { shuffleArray } from "../../utils";
 
 function Answers({ answers, handleClick }) {
-  const options = useShuffleArray(answers).map((answer, i) => (
+  const options = shuffleArray(answers).map((answer, i) => (
     <li
       onClick={handleClick}
       key={i}

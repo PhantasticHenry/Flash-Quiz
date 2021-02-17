@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-export function useShuffleArray(array) {
-  const [answers] = useState(array);
+export function shuffleArray(answers) {
   let n = answers.length - 1;
   for (; n > 0; n--) {
     const j = Math.floor(Math.random() * (n + 1));
