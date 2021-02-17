@@ -8,3 +8,18 @@ export function shuffleArray(answers) {
   }
   return answers;
 }
+
+export function renderSwitch(path, id) {
+  switch (path) {
+    case "Flashcards":
+      return "/flashcards";
+    case "Start Quiz":
+      return `/quizzes/${id}`;
+    case "Add Flashcard":
+      return "/add-flashcard";
+    case "Edit Flashcard":
+      return "/edit-flashcard";
+    default:
+      return "/";
+  }
+}
