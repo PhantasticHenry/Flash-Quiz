@@ -39,7 +39,7 @@ function Flashcard({ flashcard, allowEdit, allowRemove }) {
   useEffect(() => {
     window.addEventListener("resize", setMaxHeight);
     return () => window.removeEventListener("resize", setMaxHeight);
-  }, []);
+  }, [height]);
 
   function handleClick(e) {
     setClick(!click);
