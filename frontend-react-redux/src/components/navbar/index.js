@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import SelectCategory from "../selectCategory";
+import MenuIcon from "./MenuIcon";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
@@ -57,13 +58,14 @@ function Navbar() {
       <NavLink to="/" onClick={handleClick}>
         <img className="navbar-logo" src={logo} alt="logo" />
       </NavLink>
-      <div className="menu-icon">
+      <MenuIcon clicked={clicked} setClicked={setClicked} />
+      {/* <div className="menu-icon">
         {clicked ? (
           <FaTimes onClick={() => setClicked(!clicked)} />
         ) : (
           <FaBars onClick={() => setClicked(!clicked)} />
         )}
-      </div>
+      </div> */}
       <ul className={clicked ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item-home">
           <NavLink className="nav-link" onClick={() => handleClick()} to="/">
