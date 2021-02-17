@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import "./Result.css";
 import { addQuiz } from "../../actions/quiz/addQuiz";
 
 function Result({ correct, incorrect, category }) {
   const dispatch = useDispatch();
+  const textInput = useRef();
   const [name, setName] = useState("");
   const [clicked, setClicked] = useState(false);
 
@@ -23,10 +24,6 @@ function Result({ correct, incorrect, category }) {
     );
   };
 
-  const handleChange = (e) => {
-    setName(e.target.value);
-  };
-
   const quiz = {
     player: name,
     high_score: correct,
@@ -40,6 +37,10 @@ function Result({ correct, incorrect, category }) {
     setName("");
   };
 
+  useEffect(() => {
+    textInput.current.focus();
+  }, []);
+
   return (
     <div className="result-container">
       {renderResults()}
@@ -47,9 +48,10 @@ function Result({ correct, incorrect, category }) {
         <label>Please enter name: </label>
         <span>&nbsp;&nbsp;</span>
         <input
-          onChange={(e) => handleChange(e)}
+          onChange={(e) => setName(e.target.value)}
           value={name}
           placeholder="Enter name here"
+          ref={textInput}
         />
         {name !== "" && (
           <button onClick={handleClick} type="submit">
