@@ -59,13 +59,6 @@ function Navbar() {
         <img className="navbar-logo" src={logo} alt="logo" />
       </NavLink>
       <MenuIcon clicked={clicked} setClicked={setClicked} />
-      {/* <div className="menu-icon">
-        {clicked ? (
-          <FaTimes onClick={() => setClicked(!clicked)} />
-        ) : (
-          <FaBars onClick={() => setClicked(!clicked)} />
-        )}
-      </div> */}
       <ul className={clicked ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item-home">
           <NavLink className="nav-link" onClick={() => handleClick()} to="/">
