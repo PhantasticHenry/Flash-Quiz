@@ -14,7 +14,7 @@ function CardBack({
     <div className="back">
       <h4>Card Back</h4>
       <UserInput
-        setCorrectAnswer={setCorrectAnswer}
+        setInput={setCorrectAnswer}
         htmlFor="correct-answer"
         className="form-correct-answer"
         name="correct-answer"
