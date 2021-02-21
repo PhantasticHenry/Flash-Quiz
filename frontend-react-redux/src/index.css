@@ -8,3 +8,11 @@ html {
 :root {
   --primary: #1fb150;
 }
+
+textarea {
+  text-align: center;
+}
+
+h4 {
+  font-size: 2rem;
+}
