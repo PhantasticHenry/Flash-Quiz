@@ -24,8 +24,8 @@ function EditFlashcard(props) {
   );
   const [incorrectAnswers] = useState(incorrect_answers);
   const [answer1, setAnswer1] = useState(incorrectAnswers[0]);
-  const [answer2, setAnswer2] = useState("");
-  const [answer3, setAnswer3] = useState("");
+  const [answer2, setAnswer2] = useState(incorrectAnswers[1]);
+  const [answer3, setAnswer3] = useState(incorrectAnswers[2]);
   const [click, setClick] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -39,7 +39,6 @@ function EditFlashcard(props) {
       correct_answer: updateCorrectAnswer,
       incorrect_answers: incorrect_answers,
     };
-    console.log("***", updatedFlashcard);
     dispatch(editFlashcard(updatedFlashcard));
     setSubmitted(true);
   };
