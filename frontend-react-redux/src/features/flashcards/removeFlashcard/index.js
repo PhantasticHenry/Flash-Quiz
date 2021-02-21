@@ -12,14 +12,13 @@ function RemoveFlashcard(props) {
   const { category, question, correct_answer, incorrect_answers } = flashcard;
   const [click, setClick] = useState(false);
   const [confirm, setConfirm] = useState(false);
-
   const incorrectAnswers = incorrect_answers.map((ia, i) => {
     return <span key={i}>{ia}</span>;
   });
-
   function handleRemove() {
     if (window.confirm("Are you sure you wish to remove this flashcard?"))
-      dispatch(removeFlashcard(flashcard));
+      console.log(flashcard);
+    dispatch(removeFlashcard(flashcard));
     setConfirm(true);
   }
 
