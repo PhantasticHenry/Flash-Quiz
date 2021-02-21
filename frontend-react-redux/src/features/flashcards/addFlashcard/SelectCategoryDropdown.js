@@ -3,13 +3,9 @@ import React from "react";
 function SelectCategoryDropdown({ categoryProp, setCategory }) {
   return (
     <label htmlFor="category select" type="select">
-      Select a category:
-      <select
-        defaultValue={categoryProp}
-        onChange={(e) => setCategory(e.target.value)}
-      >
-        <option value={categoryProp} disabled>
-          Category
+      <select defaultValue={0} onChange={(e) => setCategory(e.target.value)}>
+        <option value={0} disabled>
+          Please select category
         </option>
         <option value="Reactjs">ReactJS</option>
         <option value="Funny">Funny Random</option>
