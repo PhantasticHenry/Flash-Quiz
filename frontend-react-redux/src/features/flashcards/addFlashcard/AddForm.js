@@ -17,28 +17,28 @@ function AddForm({
   submitted,
 }) {
   return (
-    <div className={`form ${click ? "flip" : ""}`}>
-      <form onSubmit={handleSubmit}>
-        <CardFront
-          categoryProp={categoryProp}
-          setCategory={setCategory}
-          setQuestion={setQuestion}
-          setAnswer1={setAnswer1}
-          setAnswer2={setAnswer2}
-          setAnswer3={setAnswer3}
-          setClick={setClick}
-          click={click}
-          checkParams={checkParams}
-        />
-        <CardBack
-          setCorrectAnswer={setCorrectAnswer}
-          setClick={setClick}
-          click={click}
-          checkParams={checkParams}
-          submitted={submitted}
-        />
-      </form>
-    </div>
+    // <div className={`form ${click ? "flip" : ""}`}>
+    <form onSubmit={handleSubmit} className={`form ${click ? "flip" : ""}`}>
+      <CardFront
+        categoryProp={categoryProp}
+        setCategory={setCategory}
+        setQuestion={setQuestion}
+        setAnswer1={setAnswer1}
+        setAnswer2={setAnswer2}
+        setAnswer3={setAnswer3}
+        setClick={setClick}
+        click={click}
+        checkParams={checkParams}
+      />
+      <CardBack
+        setCorrectAnswer={setCorrectAnswer}
+        setClick={setClick}
+        click={click}
+        checkParams={checkParams}
+        submitted={submitted}
+      />
+    </form>
+    // </div>
   );
 }
 
