@@ -48,9 +48,6 @@ function Flashcards(props) {
         >
           Add Flashcard
         </NavLink>
-        {/* <NavLink className="flashcard-btn add" to="add-flashcard">
-          Add Flashcard
-        </NavLink> */}
         <span className="flashcard-btn edit" onClick={() => handleEdit()}>
           Edit Flashcard
         </span>
