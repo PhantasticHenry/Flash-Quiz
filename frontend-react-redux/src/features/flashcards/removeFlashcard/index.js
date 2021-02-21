@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import "../addFlashcard/AddFlashcard.css";
 import { removeFlashcard } from "../../../actions/flashcard/removeFlashcard";
 import { Redirect } from "react-router-dom";
+import RemoveButton from "./RemoveButton";
+import RemovingCard from "./RemovingCard";
 
 function RemoveFlashcard(props) {
   const dispatch = useDispatch();
@@ -27,23 +29,13 @@ function RemoveFlashcard(props) {
         className={`remove ${click ? "flip" : ""}`}
         onClick={() => setClick(!click)}
       >
-        <div className="front">
-          <h2>Card Front</h2>
-          <h4>Category</h4>
-          <span>{category}</span>
-          <h4>Question</h4>
-          <span>{question}</span>
-          <h4>Incorrect Answers</h4>
-          {incorrectAnswers}
-        </div>
-        <div className="back">
-          <h2>Card Back</h2>
-          <h4 className="correct-answer">Correct Answer</h4>
-          <span>{correct_answer}</span>
-        </div>
-        <button className="remove-btn" onClick={() => handleRemove()}>
-          Remove Flashcard
-        </button>
+        <RemovingCard
+          category={category}
+          question={question}
+          incorrectAnswers={incorrectAnswers}
+          correct_answer={correct_answer}
+        />
+        <RemoveButton handleRemove={handleRemove} />
       </div>
       {confirm && <Redirect to="/" />}
     </div>
