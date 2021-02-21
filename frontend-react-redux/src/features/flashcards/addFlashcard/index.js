@@ -41,7 +41,7 @@ function AddFlashcard(props) {
       <input type="submit" value="Create Flashcard" />
     ) : (
       <span style={{ color: "red", fontWeight: "bolder" }}>
-        Please fill card back
+        Please fill card front & back
       </span>
     );
   }
