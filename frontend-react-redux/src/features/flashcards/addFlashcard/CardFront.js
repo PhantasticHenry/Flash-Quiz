@@ -47,7 +47,6 @@ function CardFront({
         name="incorrect-answer-3"
         placeholder="Enter incorrect answer"
       />
-      <p>Please fill card front</p>
       <FlipButton setClick={setClick} click={click} />
       {checkParams()}
     </div>
