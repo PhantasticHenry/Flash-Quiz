@@ -17,7 +17,6 @@ function AddForm({
   submitted,
 }) {
   return (
-    // <div className={`form ${click ? "flip" : ""}`}>
     <form onSubmit={handleSubmit} className={`form ${click ? "flip" : ""}`}>
       <CardFront
         categoryProp={categoryProp}
@@ -38,7 +37,6 @@ function AddForm({
         submitted={submitted}
       />
     </form>
-    // </div>
   );
 }
 
