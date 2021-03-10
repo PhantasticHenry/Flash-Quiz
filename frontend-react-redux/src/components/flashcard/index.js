@@ -7,6 +7,7 @@ function Flashcard({ flashcard, allowEdit, allowRemove }) {
   const [height, setHeight] = useState("initial");
   const [click, setClick] = useState(false);
   const [removed, setRemoved] = useState(false);
+  const [value, setValue] = useState(0);
 
   const cardFront = useRef();
   const cardBack = useRef();
@@ -93,6 +94,10 @@ function Flashcard({ flashcard, allowEdit, allowRemove }) {
       <div className="back" ref={cardBack}>
         {flashcard.correct_answer}
       </div>
+      {value}
+      <button className="click-me" onClick={() => setValue(value + 1)}>
+        Click Me +
+      </button>
     </div>
   );
 }
