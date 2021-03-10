@@ -153,3 +153,9 @@ select {
   backface-visibility: hidden;
   cursor: grab;
 }
+
+.click-me {
+  position: absolute;
+  top: 175px;
+  cursor: pointer;
+}
