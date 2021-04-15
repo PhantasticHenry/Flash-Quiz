@@ -1,4 +1,4 @@
-# Flash or Quiz
+# Flash Quiz
 <p>This is a quiz and flashcard application. Built with React/Redux frontend and Rails-API backend.</p>
 <br>
 <p>Users can do the following:</p>
