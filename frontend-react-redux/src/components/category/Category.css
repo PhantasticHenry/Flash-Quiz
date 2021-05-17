@@ -1,37 +1,39 @@
 .category {
-  color: rgb(255, 255, 255);
-  font-size: 3rem;
-  line-height: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  font-weight: normal;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
-  background-image: linear-gradient(
-    to right,
-    rgb(28, 110, 164) 0%,
-    rgb(35, 136, 203) 50%,
-    rgb(20, 78, 117) 100%
-  );
-  box-shadow: rgb(124, 124, 124) 5px 5px 29px 7px;
-  border: 2px solid rgb(28, 110, 164);
-  display: flex;
-  cursor: pointer;
+	color: rgb(255, 255, 255);
+	font-size: 3rem;
+	line-height: 20px;
+	padding: 20px;
+	border-radius: 15px;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	background-image: linear-gradient(
+		to right,
+		rgb(28, 110, 164) 0%,
+		rgb(35, 136, 203) 50%,
+		rgb(20, 78, 117) 100%
+	);
+	border: 2px solid rgb(28, 110, 164);
+	display: flex;
+	cursor: pointer;
+}
+.category:hover {
+	box-shadow: rgb(124, 124, 124) 5px 5px 29px 7px;
 }
 .btn-category:hover {
-  background: #1c6ea4;
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #c261b5,
-    0 0 30px #c261b5, 0 0 40px #c261b5, 0 0 55px #c261b5, 0 0 75px #c261b5;
-  border: 2px solid rgb(28, 110, 164);
+	background: #1c6ea4;
+	box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #c261b5,
+		0 0 30px #c261b5, 0 0 40px #c261b5, 0 0 55px #c261b5, 0 0 75px #c261b5;
+	border: 2px solid rgb(28, 110, 164);
 }
 .btn-category:active {
-  background: #144e75;
+	background: #144e75;
 }
 
 @media screen and (max-width: 450px) {
-  .category {
-    font-size: 1rem;
-  }
+	.category {
+		font-size: 1rem;
+	}
 }
