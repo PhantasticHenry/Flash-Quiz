@@ -1,62 +1,63 @@
 .answers {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  list-style: none;
-  width: 89.5%;
-  height: 25.5%;
-  position: relative;
-  top: 54%;
-  left: 5.2%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	list-style: none;
+	width: 89.5%;
+	height: 25.5%;
+	position: absolute;
+	top: 54%;
+	left: 5.2%;
+	gap: 20px;
 }
 
 .option-1,
 .option-2,
 .option-3,
 .option-4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border-radius: 1rem;
-  border: 10px solid #1c6ea4;
-  top: -11px;
-  height: 32%;
-  width: 44%;
-  font-size: 2rem;
-  overflow: scroll;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	border-radius: 1rem;
+	border: 10px solid #1c6ea4;
+	top: -11px;
+	height: 100%;
+	width: 44%;
+	font-size: 2rem;
+	overflow: scroll;
+	cursor: pointer;
 }
 
 .option-1 {
-  border-color: rgb(0, 183, 255);
-  -webkit-box-shadow: 0px 0px 60px 10px rgb(0, 183, 255);
-  box-shadow: 0px 0px 60px 10px rgb(0, 183, 255);
+	border-color: rgb(0, 183, 255);
+	-webkit-box-shadow: 0px 0px 60px 10px rgb(0, 183, 255);
+	box-shadow: 0px 0px 60px 10px rgb(0, 183, 255);
 }
 
 .option-2 {
-  border-color: rgb(32, 136, 0);
-  -webkit-box-shadow: 0px 0px 60px 10px rgb(32, 136, 0);
-  box-shadow: 0px 0px 60px 10px rgb(32, 136, 0);
+	border-color: rgb(32, 136, 0);
+	-webkit-box-shadow: 0px 0px 60px 10px rgb(32, 136, 0);
+	box-shadow: 0px 0px 60px 10px rgb(32, 136, 0);
 }
 
 .option-3 {
-  border-color: rgb(255, 251, 0);
-  -webkit-box-shadow: 0px 0px 60px 10px rgb(255, 251, 0);
-  box-shadow: 0px 0px 60px 10px rgb(255, 251, 0);
+	border-color: rgb(255, 251, 0);
+	-webkit-box-shadow: 0px 0px 60px 10px rgb(255, 251, 0);
+	box-shadow: 0px 0px 60px 10px rgb(255, 251, 0);
 }
 
 .option-4 {
-  border-color: rgb(255, 0, 0);
-  -webkit-box-shadow: 0px 0px 60px 10px rgb(255, 0, 0);
-  box-shadow: 0px 0px 60px 10px rgb(255, 0, 0);
+	border-color: rgb(255, 0, 0);
+	-webkit-box-shadow: 0px 0px 60px 10px rgb(255, 0, 0);
+	box-shadow: 0px 0px 60px 10px rgb(255, 0, 0);
 }
 
 @media screen and (max-width: 1600px) {
-  .option-1,
-  .option-2,
-  .option-3,
-  .option-4 {
-    font-size: 1.5rem;
-  }
+	.option-1,
+	.option-2,
+	.option-3,
+	.option-4 {
+		font-size: 1.5rem;
+	}
 }
