@@ -5,10 +5,10 @@
 	align-items: center;
 	text-align: center;
 	height: 25vh;
-	width: 63.5vw;
+	width: 50vw;
 	position: absolute;
 	top: 23.5%;
-	left: 21.2%;
+	left: 25%;
 	font-size: 3rem;
 	overflow: scroll;
 	transition: 0.5ms ease-in-out;
@@ -47,7 +47,6 @@
 @media screen and (min-width: 2400px) {
 	.question {
 		position: absolute;
-		top: 0;
 		left: 23.2%;
 		height: 22vh;
 		width: 57.5vw;
