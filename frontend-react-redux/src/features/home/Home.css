@@ -1,60 +1,61 @@
 .home {
-  background: url("../../images/home.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  overflow: hidden;
+	background: url("../../images/home.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -2;
+	overflow: hidden;
 }
 
 @keyframes STAR-MOVE {
-  from {
-    left: 0;
-    bottom: 0;
-  }
-  to {
-    left: -10000px;
-    bottom: -5000px;
-  }
+	from {
+		left: 0;
+		bottom: 0;
+	}
+	to {
+		left: -10000px;
+		bottom: -5000px;
+	}
 }
 
 .stars-layer-1 {
-  background: url("../../images/stars-layer-1.png") repeat 20% 20%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 200;
+	background: url("../../images/stars-layer-1.png") repeat 20% 20%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 200;
 
-  -webkit-animation-name: STAR-MOVE;
-  -webkit-animation-duration: 150s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 150s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
 }
 
 .stars-layer-2 {
-  background: url("../../images/stars-layer-2.png") repeat 35% 35%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 300;
+	background: url("../../images/stars-layer-2.png") repeat 35% 35%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 300;
 
-  -webkit-animation-name: STAR-MOVE;
-  -webkit-animation-duration: 100s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 100s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
 }
 
 @media screen and (max-width: 600px) {
-  .home {
-    background-image: url("../../images/home-280w.jpeg");
-  }
+	.home {
+		background-image: url("../../images/home-280w.jpeg");
+	}
 }
