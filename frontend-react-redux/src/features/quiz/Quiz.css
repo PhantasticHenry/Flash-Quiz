@@ -14,6 +14,16 @@
 	overflow: hidden;
 }
 
+.question-answers {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	position: relative;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+
 .questions {
 	display: flex;
 }
