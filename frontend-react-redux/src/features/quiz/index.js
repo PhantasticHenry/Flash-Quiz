@@ -59,7 +59,7 @@ function Quiz() {
 					<div className="questions">
 						<Question question={question} />
 					</div>
-					<div className="answers">
+					<div className="question-answers">
 						<Answers answers={answers} handleClick={handleClick} />
 					</div>
 				</>
