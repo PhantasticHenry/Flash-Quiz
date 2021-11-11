@@ -1,27 +1,37 @@
 .quiz-container {
-  display: flex;
-  background-image: url("../../images/quiz-time-main.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
-  color: white;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  font-size: 1.5rem;
-  overflow: hidden;
+	display: flex;
+	background-image: url("../../images/quiz-time-main.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	color: white;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	font-size: 1.5rem;
+	overflow: hidden;
+}
+
+.questions {
+	display: flex;
+}
+
+.answers {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
 }
 
 @media screen and (max-width: 1740px) {
-  .quiz-container {
-    background-image: url("../../images/quiz-time-ipadpro.jpeg");
-  }
+	.quiz-container {
+		background-image: url("../../images/quiz-time-ipadpro.jpeg");
+	}
 }
 
 @media screen and (max-width: 890px) {
-  .quiz-container {
-    background-image: url("../../images/quiz-time-iphonex.jpeg");
-  }
+	.quiz-container {
+		background-image: url("../../images/quiz-time-iphonex.jpeg");
+	}
 }
