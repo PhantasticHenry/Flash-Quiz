@@ -1,54 +1,56 @@
 .question {
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 25vh;
-  width: 63.5vw;
-  position: absolute;
-  top: 23.5%;
-  left: 21.2%;
-  font-size: 3rem;
-  overflow: scroll;
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 25vh;
+	width: 63.5vw;
+	position: absolute;
+	top: 23.5%;
+	left: 21.2%;
+	font-size: 3rem;
+	overflow: scroll;
+	transition: 0.5ms ease-in-out;
 }
 /* ipad pro */
 @media screen and (max-width: 1740px) {
-  .question {
-    height: 32vh;
-    width: 61.5vw;
-    top: 13.5%;
-    left: 21.2%;
-    font-size: 3rem;
-  }
+	.question {
+		height: 32vh;
+		width: 61.5vw;
+		top: 13.5%;
+		left: 21.2%;
+		font-size: 3rem;
+	}
 }
 
 @media screen and (max-width: 1600px) {
-  .question {
-    height: 25vh;
-    width: 61vw;
-    top: 23.5%;
-    left: 20.2%;
-    font-size: 2.5rem;
-  }
+	.question {
+		height: 25vh;
+		width: 61vw;
+		top: 23.5%;
+		left: 20.2%;
+		font-size: 2.5rem;
+	}
 }
 
 @media screen and (max-width: 890px) {
-  .question {
-    height: 21vh;
-    width: 60.5vw;
-    top: 23.5%;
-    left: 22.2%;
-    font-size: 2rem;
-  }
+	.question {
+		height: 21vh;
+		width: 60.5vw;
+		top: 23.5%;
+		left: 22.2%;
+		font-size: 2rem;
+	}
 }
 
 @media screen and (min-width: 2400px) {
-  .question {
-    height: 22vh;
-    width: 57.5vw;
-    top: 24.5%;
-    left: 23.2%;
-    font-size: 3rem;
-  }
+	.question {
+		position: absolute;
+		top: 0;
+		left: 23.2%;
+		height: 22vh;
+		width: 57.5vw;
+		font-size: 3rem;
+	}
 }
