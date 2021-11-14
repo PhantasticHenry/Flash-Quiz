@@ -63,10 +63,6 @@ function Quiz() {
 						<Answers answers={answers} handleClick={handleClick} />
 					</div>
 				</>
-				// <>
-				//   <Question question={question} />
-				//   <Answers answers={answers} handleClick={handleClick} />
-				// </>
 			)}
 		</div>
 	);
