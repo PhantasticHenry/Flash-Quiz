@@ -35,13 +35,20 @@
 }
 
 @media screen and (max-width: 1740px) {
-	.quiz-container {
+	/* .quiz-container {
 		background-image: url("../../images/quiz-time-ipadpro.jpeg");
+	} */
+	.question {
+		height: 25vh;
+		width: 67vw;
+		top: 30%;
+		left: 18.2%;
+		font-size: 2rem;
 	}
 }
 
 @media screen and (max-width: 890px) {
-	.quiz-container {
+	/* .quiz-container {
 		background-image: url("../../images/quiz-time-iphonex.jpeg");
-	}
+	} */
 }
