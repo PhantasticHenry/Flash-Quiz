@@ -17,10 +17,10 @@
   align-items: center;
   text-align: center;
   padding: 2rem 2rem;
-  height: 25vh;
+  height: 40vh;
   width: 65vw;
   position: absolute;
-  top: -16%;
+  top: -25%;
   left: 52%;
   border-radius: 1rem;
   transform: translate(-50%, -50%);
@@ -129,4 +129,19 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+
+@media screen and (min-width: 1400px) {
+  .result {
+    height: 35vh;
+    top: -19%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .result {
+    height: 33vh;
+    top: -16%;
+  }
 }
