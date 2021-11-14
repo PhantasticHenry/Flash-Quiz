@@ -7,7 +7,6 @@ function Flashcard({ flashcard, allowEdit, allowRemove }) {
   const [height, setHeight] = useState("initial");
   const [click, setClick] = useState(false);
   const [removed, setRemoved] = useState(false);
-  const [value, setValue] = useState(0);
 
   const cardFront = useRef();
   const cardBack = useRef();
