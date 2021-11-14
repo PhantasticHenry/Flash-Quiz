@@ -16,9 +16,9 @@
 /* ipad pro */
 @media screen and (max-width: 1740px) {
 	.question {
-		height: 36vh;
+		height: 24vh;
 		width: 58vw;
-		top: 15.5%;
+		top: 26.5%;
 		left: 24.2%;
 		font-size: 2rem;
 	}
@@ -28,7 +28,7 @@
 	.question {
 		height: 24vh;
 		width: 60vw;
-		top: 31%;
+		top: 28%;
 		left: 22%;
 		font-size: 2rem;
 	}
