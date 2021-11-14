@@ -16,30 +16,20 @@
 /* ipad pro */
 @media screen and (max-width: 1740px) {
 	.question {
-		height: 32vh;
-		width: 61.5vw;
-		top: 13.5%;
-		left: 21.2%;
-		font-size: 3rem;
+		height: 36vh;
+		width: 58vw;
+		top: 15.5%;
+		left: 24.2%;
+		font-size: 2rem;
 	}
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1400px) {
 	.question {
-		height: 25vh;
-		width: 61vw;
-		top: 23.5%;
-		left: 20.2%;
-		font-size: 2.5rem;
-	}
-}
-
-@media screen and (max-width: 890px) {
-	.question {
-		height: 21vh;
-		width: 60.5vw;
-		top: 23.5%;
-		left: 22.2%;
+		height: 24vh;
+		width: 60vw;
+		top: 31%;
+		left: 22%;
 		font-size: 2rem;
 	}
 }
