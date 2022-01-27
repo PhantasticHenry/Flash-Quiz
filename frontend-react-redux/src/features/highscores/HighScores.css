@@ -33,6 +33,7 @@
 .table-scroll table {
   position: relative;
   border-collapse: collapse;
+  height: 20px;
 }
 .thead-col {
   position: absolute;
